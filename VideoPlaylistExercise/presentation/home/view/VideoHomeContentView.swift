@@ -32,15 +32,17 @@ struct VideoHomeContentView: View {
           Text(videoInfo.title)
             .frame(alignment: Alignment.topLeading)
             .foregroundColor(.black)
-            .font(.subheadline)
+            .font(.headline)
+            .lineLimit(3)
           Spacer()
         }
         Spacer()
         HStack{
-          Text(videoInfo.description)
+          Text(videoInfo.author)
             .frame(alignment: Alignment.topLeading)
             .foregroundColor(.gray)
             .lineLimit(3)
+            .font(.subheadline)
 
           Spacer()
         }
