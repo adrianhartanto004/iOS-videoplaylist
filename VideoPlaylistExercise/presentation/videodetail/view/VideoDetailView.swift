@@ -2,20 +2,24 @@ import AVKit
 import SwiftUI
 
 struct VideoDetailView: View {
+  @Environment(\.colorScheme) private var colorScheme
+
   let videoInfo: VideoInfo
+  var avPlayer: AVPlayer?
 
   init(videoInfo: VideoInfo){
     self.videoInfo = videoInfo
+    avPlayer = AVPlayer(url: URL(string: videoInfo.video_url)!)
   }
 
   var body: some View {
     ScrollView{
       VStack(alignment: .leading){
-        VideoPlayer(player: AVPlayer(url: URL(string: videoInfo.video_url)!)).frame(height: UIScreen.main.bounds.height / 3)
+        VideoPlayer(player: avPlayer).frame(height: UIScreen.main.bounds.height / 3)
         VStack(alignment: .leading){
           Text(videoInfo.title)
             .font(.title)
-            .foregroundColor(.black)
+            .foregroundColor(colorScheme == .dark ? .white : .black)
 
           Text(videoInfo.author)
             .font(.subheadline)
@@ -25,12 +29,15 @@ struct VideoDetailView: View {
 
           Text(videoInfo.description)
             .font(.title2)
-            .foregroundColor(.black)
+            .foregroundColor(colorScheme == .dark ? .white : .black)
         }
       }
       .padding()
+      .onAppear{
+        avPlayer?.play()
+      }
       .onDisappear{
-        
+        avPlayer?.pause()
       }
     }
     .navigationBarTitle(videoInfo.title)

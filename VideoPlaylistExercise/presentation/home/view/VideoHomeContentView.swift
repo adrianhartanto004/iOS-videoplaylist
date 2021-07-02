@@ -20,7 +20,7 @@ struct VideoHomeContentView: View {
 }
 
 struct VideoHomeRowView: View {
-  @Environment(\.colorScheme) var colorScheme
+  @Environment(\.colorScheme) private var colorScheme
   let videoInfo: VideoInfo
 
   var body: some View {
