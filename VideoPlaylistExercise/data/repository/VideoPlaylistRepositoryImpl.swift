@@ -29,8 +29,7 @@ class VideoPlaylistRepositoryImpl : VideoPlaylistRepository {
         }
       return Disposables.create()
     }
-    observable
-      .observeOn(MainScheduler.instance)
+//    observable.observe(on: MainScheduler.instance)
 
     return observable
   }

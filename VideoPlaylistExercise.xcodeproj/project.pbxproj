@@ -102,8 +102,8 @@
 		2359C7BA268EDF0A000F5A2E /* presentation */ = {
 			isa = PBXGroup;
 			children = (
-				2359C7DE268EFD5E000F5A2E /* videodetail */,
 				2359C7BB268EDF18000F5A2E /* home */,
+				2359C7DE268EFD5E000F5A2E /* videodetail */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
