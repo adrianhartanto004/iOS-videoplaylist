@@ -46,8 +46,7 @@ struct VideoDetailView: View {
 }
 
 struct VideoDetailView_Previews: PreviewProvider {
-  static let videoInfo = VideoInfo(id: 1, description: "The first Blender Open Movie from 2006", video_url: "video_url", author: "By Blender Foundation", thumbnail_url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg", title: "Elephant Dream")
   static var previews: some View {
-    VideoDetailView(videoInfo: videoInfo)
+    VideoDetailView(videoInfo: VideoInfo.videoInfoMockData)
   }
 }

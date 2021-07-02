@@ -8,3 +8,7 @@ struct VideoListInfo : Codable {
 enum MyError: Error{
   case runtimeError(String)
 }
+
+extension VideoListInfo {
+  static let videoListInfoMockData = VideoListInfo(play_list: [VideoInfo.videoInfoMockData])
+}
