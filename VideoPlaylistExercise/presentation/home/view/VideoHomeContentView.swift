@@ -18,7 +18,7 @@ struct VideoHomeContentsView: View {
 }
 
 struct VideoHomeContentView: View {
-
+  @Environment(\.colorScheme) var colorScheme
   let videoInfo: VideoInfo
 
   var body: some View {
@@ -26,12 +26,12 @@ struct VideoHomeContentView: View {
       KFImage(URL(string: videoInfo.thumbnail_url))
         .resizable()
         .frame(width: 150, height: 150)
-        .cornerRadius(20)
+        .cornerRadius(16)
       VStack {
         HStack {
           Text(videoInfo.title)
             .frame(alignment: Alignment.topLeading)
-            .foregroundColor(.black)
+            .foregroundColor(colorScheme == .dark ? .white : .black)
             .font(.headline)
             .lineLimit(3)
           Spacer()
