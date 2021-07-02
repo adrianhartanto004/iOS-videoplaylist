@@ -13,7 +13,6 @@
 		2359C7A9268ECDC6000F5A2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2359C7A8268ECDC6000F5A2E /* Preview Assets.xcassets */; };
 		2359C7B2268EDDB0000F5A2E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7B1268EDDB0000F5A2E /* Alamofire */; };
 		2359C7B5268EDDEF000F5A2E /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7B4268EDDEF000F5A2E /* SwiftyJSON */; };
-		2359C7B8268EDE4E000F5A2E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7B7268EDE4E000F5A2E /* SDWebImageSwiftUI */; };
 		2359C7BF268EDF9A000F5A2E /* VideoHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7BE268EDF9A000F5A2E /* VideoHomeViewModel.swift */; };
 		2359C7C4268EE023000F5A2E /* VideoListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7C3268EE023000F5A2E /* VideoListInfo.swift */; };
 		2359C7C6268EE032000F5A2E /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7C5268EE032000F5A2E /* VideoInfo.swift */; };
@@ -50,7 +49,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2359C7D4268EE4CA000F5A2E /* RxRelay in Frameworks */,
-				2359C7B8268EDE4E000F5A2E /* SDWebImageSwiftUI in Frameworks */,
 				2359C7D6268EE4CA000F5A2E /* RxCocoa in Frameworks */,
 				2359C7B5268EDDEF000F5A2E /* SwiftyJSON in Frameworks */,
 				2359C7DB268EECB7000F5A2E /* Kingfisher in Frameworks */,
@@ -205,7 +203,6 @@
 			packageProductDependencies = (
 				2359C7B1268EDDB0000F5A2E /* Alamofire */,
 				2359C7B4268EDDEF000F5A2E /* SwiftyJSON */,
-				2359C7B7268EDE4E000F5A2E /* SDWebImageSwiftUI */,
 				2359C7CF268EE4CA000F5A2E /* RxSwift */,
 				2359C7D3268EE4CA000F5A2E /* RxRelay */,
 				2359C7D5268EE4CA000F5A2E /* RxCocoa */,
@@ -521,11 +518,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2359C7B3268EDDEF000F5A2E /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
-		};
-		2359C7B7268EDE4E000F5A2E /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2359C7B6268EDE4E000F5A2E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
 		};
 		2359C7CF268EE4CA000F5A2E /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
