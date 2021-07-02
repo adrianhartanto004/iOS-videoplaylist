@@ -3,23 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2359C7A2268ECDC4000F5A2E /* VideoPlaylistExerciseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7A1268ECDC4000F5A2E /* VideoPlaylistExerciseApp.swift */; };
-		2359C7A4268ECDC4000F5A2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7A3268ECDC4000F5A2E /* ContentView.swift */; };
+		2359C7A4268ECDC4000F5A2E /* VideoHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7A3268ECDC4000F5A2E /* VideoHomeView.swift */; };
 		2359C7A6268ECDC6000F5A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2359C7A5268ECDC6000F5A2E /* Assets.xcassets */; };
 		2359C7A9268ECDC6000F5A2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2359C7A8268ECDC6000F5A2E /* Preview Assets.xcassets */; };
+		2359C7B2268EDDB0000F5A2E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7B1268EDDB0000F5A2E /* Alamofire */; };
+		2359C7B5268EDDEF000F5A2E /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7B4268EDDEF000F5A2E /* SwiftyJSON */; };
+		2359C7B8268EDE4E000F5A2E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7B7268EDE4E000F5A2E /* SDWebImageSwiftUI */; };
+		2359C7BF268EDF9A000F5A2E /* VideoHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7BE268EDF9A000F5A2E /* VideoHomeViewModel.swift */; };
+		2359C7C4268EE023000F5A2E /* VideoListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7C3268EE023000F5A2E /* VideoListInfo.swift */; };
+		2359C7C6268EE032000F5A2E /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7C5268EE032000F5A2E /* VideoInfo.swift */; };
+		2359C7C9268EE396000F5A2E /* VideoPlaylistRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7C8268EE396000F5A2E /* VideoPlaylistRepository.swift */; };
+		2359C7CD268EE3DC000F5A2E /* VideoPlaylistRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7CC268EE3DC000F5A2E /* VideoPlaylistRepositoryImpl.swift */; };
+		2359C7D0268EE4CA000F5A2E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7CF268EE4CA000F5A2E /* RxSwift */; };
+		2359C7D4268EE4CA000F5A2E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7D3268EE4CA000F5A2E /* RxRelay */; };
+		2359C7D6268EE4CA000F5A2E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7D5268EE4CA000F5A2E /* RxCocoa */; };
+		2359C7D8268EE4CA000F5A2E /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7D7268EE4CA000F5A2E /* RxBlocking */; };
+		2359C7DB268EECB7000F5A2E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7DA268EECB7000F5A2E /* Kingfisher */; };
+		2359C7DD268EED7C000F5A2E /* VideoHomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7DC268EED7C000F5A2E /* VideoHomeContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2359C79E268ECDC4000F5A2E /* VideoPlaylistExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPlaylistExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2359C7A1268ECDC4000F5A2E /* VideoPlaylistExerciseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaylistExerciseApp.swift; sourceTree = "<group>"; };
-		2359C7A3268ECDC4000F5A2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2359C7A3268ECDC4000F5A2E /* VideoHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHomeView.swift; sourceTree = "<group>"; };
 		2359C7A5268ECDC6000F5A2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2359C7A8268ECDC6000F5A2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2359C7AA268ECDC6000F5A2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2359C7BE268EDF9A000F5A2E /* VideoHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHomeViewModel.swift; sourceTree = "<group>"; };
+		2359C7C3268EE023000F5A2E /* VideoListInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListInfo.swift; sourceTree = "<group>"; };
+		2359C7C5268EE032000F5A2E /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
+		2359C7C8268EE396000F5A2E /* VideoPlaylistRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaylistRepository.swift; sourceTree = "<group>"; };
+		2359C7CC268EE3DC000F5A2E /* VideoPlaylistRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaylistRepositoryImpl.swift; sourceTree = "<group>"; };
+		2359C7DC268EED7C000F5A2E /* VideoHomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHomeContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +47,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2359C7D4268EE4CA000F5A2E /* RxRelay in Frameworks */,
+				2359C7B8268EDE4E000F5A2E /* SDWebImageSwiftUI in Frameworks */,
+				2359C7D6268EE4CA000F5A2E /* RxCocoa in Frameworks */,
+				2359C7B5268EDDEF000F5A2E /* SwiftyJSON in Frameworks */,
+				2359C7DB268EECB7000F5A2E /* Kingfisher in Frameworks */,
+				2359C7D8268EE4CA000F5A2E /* RxBlocking in Frameworks */,
+				2359C7D0268EE4CA000F5A2E /* RxSwift in Frameworks */,
+				2359C7B2268EDDB0000F5A2E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,11 +80,13 @@
 		2359C7A0268ECDC4000F5A2E /* VideoPlaylistExercise */ = {
 			isa = PBXGroup;
 			children = (
-				2359C7A1268ECDC4000F5A2E /* VideoPlaylistExerciseApp.swift */,
-				2359C7A3268ECDC4000F5A2E /* ContentView.swift */,
 				2359C7A5268ECDC6000F5A2E /* Assets.xcassets */,
+				2359C7C0268EDFE7000F5A2E /* data */,
+				2359C7C7268EE386000F5A2E /* domain */,
 				2359C7AA268ECDC6000F5A2E /* Info.plist */,
+				2359C7BA268EDF0A000F5A2E /* presentation */,
 				2359C7A7268ECDC6000F5A2E /* Preview Content */,
+				2359C7A1268ECDC4000F5A2E /* VideoPlaylistExerciseApp.swift */,
 			);
 			path = VideoPlaylistExercise;
 			sourceTree = "<group>";
@@ -67,6 +97,74 @@
 				2359C7A8268ECDC6000F5A2E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2359C7BA268EDF0A000F5A2E /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2359C7BB268EDF18000F5A2E /* home */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		2359C7BB268EDF18000F5A2E /* home */ = {
+			isa = PBXGroup;
+			children = (
+				2359C7BC268EDF1E000F5A2E /* view */,
+				2359C7BD268EDF23000F5A2E /* viewmodel */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		2359C7BC268EDF1E000F5A2E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2359C7DC268EED7C000F5A2E /* VideoHomeContentView.swift */,
+				2359C7A3268ECDC4000F5A2E /* VideoHomeView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2359C7BD268EDF23000F5A2E /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				2359C7BE268EDF9A000F5A2E /* VideoHomeViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		2359C7C0268EDFE7000F5A2E /* data */ = {
+			isa = PBXGroup;
+			children = (
+				2359C7C2268EDFF6000F5A2E /* model */,
+				2359C7C1268EDFF0000F5A2E /* repository */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		2359C7C1268EDFF0000F5A2E /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				2359C7CC268EE3DC000F5A2E /* VideoPlaylistRepositoryImpl.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		2359C7C2268EDFF6000F5A2E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2359C7C5268EE032000F5A2E /* VideoInfo.swift */,
+				2359C7C3268EE023000F5A2E /* VideoListInfo.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2359C7C7268EE386000F5A2E /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				2359C7C8268EE396000F5A2E /* VideoPlaylistRepository.swift */,
+			);
+			path = domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +183,16 @@
 			dependencies = (
 			);
 			name = VideoPlaylistExercise;
+			packageProductDependencies = (
+				2359C7B1268EDDB0000F5A2E /* Alamofire */,
+				2359C7B4268EDDEF000F5A2E /* SwiftyJSON */,
+				2359C7B7268EDE4E000F5A2E /* SDWebImageSwiftUI */,
+				2359C7CF268EE4CA000F5A2E /* RxSwift */,
+				2359C7D3268EE4CA000F5A2E /* RxRelay */,
+				2359C7D5268EE4CA000F5A2E /* RxCocoa */,
+				2359C7D7268EE4CA000F5A2E /* RxBlocking */,
+				2359C7DA268EECB7000F5A2E /* Kingfisher */,
+			);
 			productName = VideoPlaylistExercise;
 			productReference = 2359C79E268ECDC4000F5A2E /* VideoPlaylistExercise.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +220,13 @@
 				Base,
 			);
 			mainGroup = 2359C795268ECDC4000F5A2E;
+			packageReferences = (
+				2359C7B0268EDDB0000F5A2E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2359C7B3268EDDEF000F5A2E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				2359C7B6268EDE4E000F5A2E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				2359C7D9268EECB7000F5A2E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 2359C79F268ECDC4000F5A2E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +253,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2359C7A4268ECDC4000F5A2E /* ContentView.swift in Sources */,
+				2359C7A4268ECDC4000F5A2E /* VideoHomeView.swift in Sources */,
+				2359C7C9268EE396000F5A2E /* VideoPlaylistRepository.swift in Sources */,
+				2359C7C4268EE023000F5A2E /* VideoListInfo.swift in Sources */,
+				2359C7DD268EED7C000F5A2E /* VideoHomeContentView.swift in Sources */,
+				2359C7C6268EE032000F5A2E /* VideoInfo.swift in Sources */,
+				2359C7BF268EDF9A000F5A2E /* VideoHomeViewModel.swift in Sources */,
+				2359C7CD268EE3DC000F5A2E /* VideoPlaylistRepositoryImpl.swift in Sources */,
 				2359C7A2268ECDC4000F5A2E /* VideoPlaylistExerciseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +447,92 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2359C7B0268EDDB0000F5A2E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		2359C7B3268EDDEF000F5A2E /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		2359C7B6268EDE4E000F5A2E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+		2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
+		2359C7D9268EECB7000F5A2E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2359C7B1268EDDB0000F5A2E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2359C7B0268EDDB0000F5A2E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		2359C7B4268EDDEF000F5A2E /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2359C7B3268EDDEF000F5A2E /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		2359C7B7268EDE4E000F5A2E /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2359C7B6268EDE4E000F5A2E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		2359C7CF268EE4CA000F5A2E /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		2359C7D3268EE4CA000F5A2E /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		2359C7D5268EE4CA000F5A2E /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		2359C7D7268EE4CA000F5A2E /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		2359C7DA268EECB7000F5A2E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2359C7D9268EECB7000F5A2E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2359C796268ECDC4000F5A2E /* Project object */;
 }

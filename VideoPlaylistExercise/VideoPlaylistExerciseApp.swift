@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct VideoPlaylistExerciseApp: App {
+  let repository = VideoPlaylistRepositoryImpl()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            VideoHomeView(viewModel: VideoHomeViewModel(repository: repository))
         }
     }
 }
