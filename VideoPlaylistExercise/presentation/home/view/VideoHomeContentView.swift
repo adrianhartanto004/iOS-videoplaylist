@@ -1,23 +1,25 @@
 import SwiftUI
 import Kingfisher
 
-struct VideoHomeContentsView: View {
+struct VideoHomeContentView: View {
 
   let videoListInfo: VideoListInfo
 
   var body: some View {
-    ScrollView(.vertical, showsIndicators: false) {
-      VStack {
+    NavigationView {
+      List {
         ForEach(videoListInfo.play_list, id: \.self) { videoInfo in
-          VideoHomeContentView(videoInfo: videoInfo)
+          NavigationLink(destination: VideoDetailView(videoInfo: videoInfo)){
+            VideoHomeRowView(videoInfo: videoInfo)
+          }
         }
       }
+      .navigationTitle("Home")
     }
-    .padding()
   }
 }
 
-struct VideoHomeContentView: View {
+struct VideoHomeRowView: View {
   @Environment(\.colorScheme) var colorScheme
   let videoInfo: VideoInfo
 
@@ -56,6 +58,6 @@ struct VideoHomeContentsView_Previews: PreviewProvider {
   static let videoInfo = VideoInfo(id: 1, description: "The first Blender Open Movie from 2006", video_url: "video_url", author: "By Blender Foundation", thumbnail_url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg", title: "Elephant Dream")
   static let videoListInfo = VideoListInfo(play_list: [videoInfo])
   static var previews: some View {
-    VideoHomeContentsView(videoListInfo: videoListInfo)
+    VideoHomeContentView(videoListInfo: videoListInfo)
   }
 }

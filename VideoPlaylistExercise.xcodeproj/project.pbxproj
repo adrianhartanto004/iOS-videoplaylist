@@ -25,6 +25,7 @@
 		2359C7D8268EE4CA000F5A2E /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7D7268EE4CA000F5A2E /* RxBlocking */; };
 		2359C7DB268EECB7000F5A2E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7DA268EECB7000F5A2E /* Kingfisher */; };
 		2359C7DD268EED7C000F5A2E /* VideoHomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7DC268EED7C000F5A2E /* VideoHomeContentView.swift */; };
+		2359C7E1268EFD9D000F5A2E /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7E0268EFD9D000F5A2E /* VideoDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		2359C7C8268EE396000F5A2E /* VideoPlaylistRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaylistRepository.swift; sourceTree = "<group>"; };
 		2359C7CC268EE3DC000F5A2E /* VideoPlaylistRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaylistRepositoryImpl.swift; sourceTree = "<group>"; };
 		2359C7DC268EED7C000F5A2E /* VideoHomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHomeContentView.swift; sourceTree = "<group>"; };
+		2359C7E0268EFD9D000F5A2E /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		2359C7BA268EDF0A000F5A2E /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2359C7DE268EFD5E000F5A2E /* videodetail */,
 				2359C7BB268EDF18000F5A2E /* home */,
 			);
 			path = presentation;
@@ -165,6 +168,22 @@
 				2359C7C8268EE396000F5A2E /* VideoPlaylistRepository.swift */,
 			);
 			path = domain;
+			sourceTree = "<group>";
+		};
+		2359C7DE268EFD5E000F5A2E /* videodetail */ = {
+			isa = PBXGroup;
+			children = (
+				2359C7DF268EFD6B000F5A2E /* view */,
+			);
+			path = videodetail;
+			sourceTree = "<group>";
+		};
+		2359C7DF268EFD6B000F5A2E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2359C7E0268EFD9D000F5A2E /* VideoDetailView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +276,7 @@
 				2359C7C9268EE396000F5A2E /* VideoPlaylistRepository.swift in Sources */,
 				2359C7C4268EE023000F5A2E /* VideoListInfo.swift in Sources */,
 				2359C7DD268EED7C000F5A2E /* VideoHomeContentView.swift in Sources */,
+				2359C7E1268EFD9D000F5A2E /* VideoDetailView.swift in Sources */,
 				2359C7C6268EE032000F5A2E /* VideoInfo.swift in Sources */,
 				2359C7BF268EDF9A000F5A2E /* VideoHomeViewModel.swift in Sources */,
 				2359C7CD268EE3DC000F5A2E /* VideoPlaylistRepositoryImpl.swift in Sources */,

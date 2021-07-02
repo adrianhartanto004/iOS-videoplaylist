@@ -9,7 +9,6 @@ struct VideoHomeView: View {
   }
 
   var body: some View {
-    ScrollView {
       Group { () -> AnyView in
 
         switch viewModel.uiState {
@@ -18,7 +17,7 @@ struct VideoHomeView: View {
           return AnyView(Text(message))
 
         case .Fetched(let videos):
-          return AnyView(VideoHomeContentsView(videoListInfo: videos))
+          return AnyView(VideoHomeContentView(videoListInfo: videos))
 
         case .NoResultsFound:
           return AnyView(Text("No matching movies found"))
@@ -27,13 +26,5 @@ struct VideoHomeView: View {
           return AnyView(Text(errorMessage))
         }
       }
-    }
   }
 }
-
-//struct VideoHomeView_Previews: PreviewProvider {
-//  static let repository = VideoPlaylistRepositoryImpl()
-//  static var previews: some View {
-//    VideoHomeView(viewModel: VideoHomeViewModel(repository: repository))
-//  }
-//}
