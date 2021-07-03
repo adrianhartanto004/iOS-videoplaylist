@@ -10,9 +10,10 @@ import SwiftUI
 @main
 struct VideoPlaylistExerciseApp: App {
   let repository = VideoPlaylistRepositoryImpl()
+  let persistenceHandler = PersistenceHandler()
     var body: some Scene {
         WindowGroup {
-            VideoHomeView(viewModel: VideoHomeViewModel(repository: repository))
+            VideoHomeView(viewModel: VideoHomeViewModel(repository: repository, persistence: persistenceHandler))
         }
     }
 }
