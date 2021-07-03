@@ -25,7 +25,8 @@
 		2359C7DB268EECB7000F5A2E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7DA268EECB7000F5A2E /* Kingfisher */; };
 		2359C7DD268EED7C000F5A2E /* VideoHomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7DC268EED7C000F5A2E /* VideoHomeContentView.swift */; };
 		2359C7E1268EFD9D000F5A2E /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7E0268EFD9D000F5A2E /* VideoDetailView.swift */; };
-		237B37E92690E6DC00F2B149 /* PersistenceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237B37E82690E6DC00F2B149 /* PersistenceHandler.swift */; };
+		237B37E92690E6DC00F2B149 /* PersistenceHandlerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237B37E82690E6DC00F2B149 /* PersistenceHandlerImpl.swift */; };
+		237B37ED2690F1A400F2B149 /* PersistenceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237B37EC2690F1A400F2B149 /* PersistenceHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +43,8 @@
 		2359C7CC268EE3DC000F5A2E /* VideoPlaylistRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaylistRepositoryImpl.swift; sourceTree = "<group>"; };
 		2359C7DC268EED7C000F5A2E /* VideoHomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHomeContentView.swift; sourceTree = "<group>"; };
 		2359C7E0268EFD9D000F5A2E /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
-		237B37E82690E6DC00F2B149 /* PersistenceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHandler.swift; sourceTree = "<group>"; };
+		237B37E82690E6DC00F2B149 /* PersistenceHandlerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHandlerImpl.swift; sourceTree = "<group>"; };
+		237B37EC2690F1A400F2B149 /* PersistenceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		2359C7C7268EE386000F5A2E /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				237B37EC2690F1A400F2B149 /* PersistenceHandler.swift */,
 				2359C7C8268EE396000F5A2E /* VideoPlaylistRepository.swift */,
 			);
 			path = domain;
@@ -198,7 +201,7 @@
 		237B37EB2690EF9200F2B149 /* local */ = {
 			isa = PBXGroup;
 			children = (
-				237B37E82690E6DC00F2B149 /* PersistenceHandler.swift */,
+				237B37E82690E6DC00F2B149 /* PersistenceHandlerImpl.swift */,
 			);
 			path = local;
 			sourceTree = "<group>";
@@ -290,10 +293,11 @@
 			files = (
 				2359C7A4268ECDC4000F5A2E /* VideoHomeView.swift in Sources */,
 				2359C7C9268EE396000F5A2E /* VideoPlaylistRepository.swift in Sources */,
-				237B37E92690E6DC00F2B149 /* PersistenceHandler.swift in Sources */,
+				237B37E92690E6DC00F2B149 /* PersistenceHandlerImpl.swift in Sources */,
 				2359C7C4268EE023000F5A2E /* VideoListInfo.swift in Sources */,
 				2359C7DD268EED7C000F5A2E /* VideoHomeContentView.swift in Sources */,
 				2359C7E1268EFD9D000F5A2E /* VideoDetailView.swift in Sources */,
+				237B37ED2690F1A400F2B149 /* PersistenceHandler.swift in Sources */,
 				2359C7C6268EE032000F5A2E /* VideoInfo.swift in Sources */,
 				2359C7BF268EDF9A000F5A2E /* VideoHomeViewModel.swift in Sources */,
 				2359C7CD268EE3DC000F5A2E /* VideoPlaylistRepositoryImpl.swift in Sources */,

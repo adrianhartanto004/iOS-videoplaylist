@@ -1,6 +1,6 @@
 import Foundation
 
-class PersistenceHandler {
+class PersistenceHandlerImpl : PersistenceHandler{
 
   private static var documentsFolder: URL {
     do {
