@@ -37,15 +37,12 @@ class VideoHomeViewModel : ObservableObject {
             for item in response.play_list {
               self?.create(id: item.id, desc: item.description, video_url: item.video_url, author: item.author, thumbnail_url: item.thumbnail_url, title: item.title)
             }
-//            self?.persistence.save(videoListInfo: response)
           }
 
         },
         onError: { error in
           let videoListInfo = VideoListInfo(play_list: self.videoLocal)
-//          self.persistence.load { (videoList) in
             self.uiState = .Fetched(videoListInfo)
-//          }
           debugPrint(error)
         }
       )
