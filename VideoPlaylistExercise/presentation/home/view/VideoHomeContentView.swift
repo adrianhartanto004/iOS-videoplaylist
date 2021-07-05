@@ -15,6 +15,7 @@ struct VideoHomeContentView: View {
         }
       }
       .navigationTitle("Playlist")
+      .navigationBarTitleDisplayMode(.inline)
     }
   }
 }
