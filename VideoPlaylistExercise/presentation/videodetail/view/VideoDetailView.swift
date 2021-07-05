@@ -35,7 +35,7 @@ struct VideoDetailView: View {
       }
       .padding()
       .onAppear{
-        avPlayer?.play()
+        avPlayer?.seek(to: .zero)
       }
       .onDisappear{
         avPlayer?.pause()
