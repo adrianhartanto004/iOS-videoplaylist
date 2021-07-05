@@ -29,6 +29,7 @@
 		237B37ED2690F1A400F2B149 /* PersistenceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237B37EC2690F1A400F2B149 /* PersistenceHandler.swift */; };
 		23DA42C62692F4B400EDCD40 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 23DA42C52692F4B400EDCD40 /* Realm */; };
 		23DA42C82692F4B400EDCD40 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 23DA42C72692F4B400EDCD40 /* RealmSwift */; };
+		23DA42CA2692F51F00EDCD40 /* VideoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DA42C92692F51F00EDCD40 /* VideoEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		2359C7E0268EFD9D000F5A2E /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
 		237B37E82690E6DC00F2B149 /* PersistenceHandlerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHandlerImpl.swift; sourceTree = "<group>"; };
 		237B37EC2690F1A400F2B149 /* PersistenceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHandler.swift; sourceTree = "<group>"; };
+		23DA42C92692F51F00EDCD40 /* VideoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				2359C7C5268EE032000F5A2E /* VideoInfo.swift */,
 				2359C7C3268EE023000F5A2E /* VideoListInfo.swift */,
+				23DA42C92692F51F00EDCD40 /* VideoEntity.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DA42CA2692F51F00EDCD40 /* VideoEntity.swift in Sources */,
 				2359C7A4268ECDC4000F5A2E /* VideoHomeView.swift in Sources */,
 				2359C7C9268EE396000F5A2E /* VideoPlaylistRepository.swift in Sources */,
 				237B37E92690E6DC00F2B149 /* PersistenceHandlerImpl.swift in Sources */,
