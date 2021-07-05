@@ -26,7 +26,9 @@ class PersistenceHandlerImpl : PersistenceHandler{
         fatalError("Can't decode saved playlist data.")
       }
 
-      completion(videoList as VideoListInfo)
+      DispatchQueue.main.async {
+        completion(videoList as VideoListInfo)
+      }
     }
   }
 
@@ -35,8 +37,8 @@ class PersistenceHandlerImpl : PersistenceHandler{
       //      guard let videos = videoListInfo else { fatalError("Self out of scope") }
       guard let data = try? JSONEncoder().encode(videoListInfo) else { fatalError("Error encoding data") }
       do {
-        let outfile = Self.fileURL
-        try data.write(to: outfile)
+        let outFile = Self.fileURL
+        try data.write(to: outFile)
       } catch{
         fatalError("Can't write to file")
       }
