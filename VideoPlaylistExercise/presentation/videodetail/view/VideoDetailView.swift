@@ -9,7 +9,8 @@ struct VideoDetailView: View {
 
   init(videoInfo: VideoInfo){
     self.videoInfo = videoInfo
-    avPlayer = AVPlayer(url: URL(string: videoInfo.video_url)!)
+    guard let videoUrl = URL(string: videoInfo.video_url) else { return }
+    avPlayer = AVPlayer(url: videoUrl)
   }
 
   var body: some View {

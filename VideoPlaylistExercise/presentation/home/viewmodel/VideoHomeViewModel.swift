@@ -31,10 +31,8 @@ class VideoHomeViewModel : ObservableObject {
 
         },
         onError: { error in
-          self.persistence.load { (videoResult) in
-            DispatchQueue.main.async {
-              self.uiState = .Fetched(videoResult)
-            }
+          self.persistence.load { (videoList) in
+            self.uiState = .Fetched(videoList)
           }
           debugPrint(error)
         }
