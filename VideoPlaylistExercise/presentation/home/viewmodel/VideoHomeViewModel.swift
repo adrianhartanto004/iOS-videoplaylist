@@ -1,18 +1,26 @@
 import Foundation
 import RxSwift
+import RealmSwift
 
 class VideoHomeViewModel : ObservableObject {
+
+  private var videoRealmResults: Results<VideoEntity>
 
   @Published var uiState: VideoHomePageState = .Loading("Loading...")
 
   let disposableBag = DisposeBag()
 
   private let repository: VideoPlaylistRepository
-  private let persistence: PersistenceHandler
 
-  init(repository: VideoPlaylistRepository, persistence: PersistenceHandler) {
+  let realm = try! Realm()
+  
+  init(repository: VideoPlaylistRepository) {
     self.repository = repository
-    self.persistence = persistence
+    videoRealmResults = realm.objects(VideoEntity.self)
+  }
+
+  var videoLocal: [VideoInfo] {
+    videoRealmResults.map(VideoInfo.init)
   }
 
   func getVideos() {
@@ -26,14 +34,18 @@ class VideoHomeViewModel : ObservableObject {
             self?.uiState = .NoResultsFound
           } else {
             self?.uiState = .Fetched(response)
-            self?.persistence.save(videoListInfo: response)
+            for item in response.play_list {
+              self?.create(id: item.id, desc: item.description, video_url: item.video_url, author: item.author, thumbnail_url: item.thumbnail_url, title: item.title)
+            }
+//            self?.persistence.save(videoListInfo: response)
           }
 
         },
         onError: { error in
-          self.persistence.load { (videoList) in
-            self.uiState = .Fetched(videoList)
-          }
+          let videoListInfo = VideoListInfo(play_list: self.videoLocal)
+//          self.persistence.load { (videoList) in
+            self.uiState = .Fetched(videoListInfo)
+//          }
           debugPrint(error)
         }
       )
@@ -46,4 +58,30 @@ enum VideoHomePageState {
   case Fetched(VideoListInfo)
   case NoResultsFound
   case ApiError(String)
+}
+
+// MARK: - CRUD Actions
+extension VideoHomeViewModel {
+  func create(id: Int, desc: String, video_url: String, author: String, thumbnail_url: String, title: String) {
+    objectWillChange.send()
+
+    do {
+      let realm = try Realm()
+
+      let videoEntity = VideoEntity()
+      videoEntity.id = id
+      videoEntity.desc = desc
+      videoEntity.video_url = video_url
+      videoEntity.author = author
+      videoEntity.thumbnail_url = thumbnail_url
+      videoEntity.title = title
+
+      try realm.write {
+        realm.add(videoEntity, update: .all)
+      }
+    } catch let error {
+      // Handle error
+      print(error.localizedDescription)
+    }
+  }
 }
