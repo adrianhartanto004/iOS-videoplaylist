@@ -14,3 +14,9 @@ class VideoEntity: Object {
     "id"
   }
 }
+
+extension VideoEntity{
+  class func fetch() -> Results<VideoEntity> {
+    return try! Realm().objects(VideoEntity.self)
+  }
+}

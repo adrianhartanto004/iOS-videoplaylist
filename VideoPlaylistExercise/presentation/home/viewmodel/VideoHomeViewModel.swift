@@ -12,11 +12,9 @@ class VideoHomeViewModel : ObservableObject {
 
   private let repository: VideoPlaylistRepository
 
-  let realm = try! Realm()
-  
   init(repository: VideoPlaylistRepository) {
     self.repository = repository
-    videoRealmResults = realm.objects(VideoEntity.self)
+    videoRealmResults = VideoEntity.fetch()
   }
 
   var videoLocal: [VideoInfo] {
