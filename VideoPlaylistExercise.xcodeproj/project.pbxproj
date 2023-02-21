@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,26 +11,19 @@
 		2359C7A4268ECDC4000F5A2E /* VideoHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7A3268ECDC4000F5A2E /* VideoHomeView.swift */; };
 		2359C7A6268ECDC6000F5A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2359C7A5268ECDC6000F5A2E /* Assets.xcassets */; };
 		2359C7A9268ECDC6000F5A2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2359C7A8268ECDC6000F5A2E /* Preview Assets.xcassets */; };
-		2359C7B2268EDDB0000F5A2E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7B1268EDDB0000F5A2E /* Alamofire */; };
-		2359C7B5268EDDEF000F5A2E /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7B4268EDDEF000F5A2E /* SwiftyJSON */; };
 		2359C7BF268EDF9A000F5A2E /* VideoHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7BE268EDF9A000F5A2E /* VideoHomeViewModel.swift */; };
 		2359C7C4268EE023000F5A2E /* VideoListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7C3268EE023000F5A2E /* VideoListInfo.swift */; };
 		2359C7C6268EE032000F5A2E /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7C5268EE032000F5A2E /* VideoInfo.swift */; };
 		2359C7C9268EE396000F5A2E /* VideoPlaylistRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7C8268EE396000F5A2E /* VideoPlaylistRepository.swift */; };
 		2359C7CD268EE3DC000F5A2E /* VideoPlaylistRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7CC268EE3DC000F5A2E /* VideoPlaylistRepositoryImpl.swift */; };
-		2359C7D0268EE4CA000F5A2E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7CF268EE4CA000F5A2E /* RxSwift */; };
-		2359C7D4268EE4CA000F5A2E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7D3268EE4CA000F5A2E /* RxRelay */; };
-		2359C7D6268EE4CA000F5A2E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7D5268EE4CA000F5A2E /* RxCocoa */; };
-		2359C7D8268EE4CA000F5A2E /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7D7268EE4CA000F5A2E /* RxBlocking */; };
-		2359C7DB268EECB7000F5A2E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2359C7DA268EECB7000F5A2E /* Kingfisher */; };
 		2359C7DD268EED7C000F5A2E /* VideoHomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7DC268EED7C000F5A2E /* VideoHomeContentView.swift */; };
 		2359C7E1268EFD9D000F5A2E /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359C7E0268EFD9D000F5A2E /* VideoDetailView.swift */; };
-		23DA42C62692F4B400EDCD40 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 23DA42C52692F4B400EDCD40 /* Realm */; };
-		23DA42C82692F4B400EDCD40 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 23DA42C72692F4B400EDCD40 /* RealmSwift */; };
 		23DA42CA2692F51F00EDCD40 /* VideoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DA42C92692F51F00EDCD40 /* VideoEntity.swift */; };
+		E6A6D9525D6DF6969513732F /* Pods_VideoPlaylistExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD8C73C80E30DDFD449C533 /* Pods_VideoPlaylistExercise.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15E7962DABBE6EDA100464F8 /* Pods-VideoPlaylistExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlaylistExercise.release.xcconfig"; path = "Target Support Files/Pods-VideoPlaylistExercise/Pods-VideoPlaylistExercise.release.xcconfig"; sourceTree = "<group>"; };
 		2359C79E268ECDC4000F5A2E /* VideoPlaylistExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPlaylistExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2359C7A1268ECDC4000F5A2E /* VideoPlaylistExerciseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaylistExerciseApp.swift; sourceTree = "<group>"; };
 		2359C7A3268ECDC4000F5A2E /* VideoHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHomeView.swift; sourceTree = "<group>"; };
@@ -45,6 +38,8 @@
 		2359C7DC268EED7C000F5A2E /* VideoHomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHomeContentView.swift; sourceTree = "<group>"; };
 		2359C7E0268EFD9D000F5A2E /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
 		23DA42C92692F51F00EDCD40 /* VideoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEntity.swift; sourceTree = "<group>"; };
+		4A0970BBB132F7157CEAD778 /* Pods-VideoPlaylistExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlaylistExercise.debug.xcconfig"; path = "Target Support Files/Pods-VideoPlaylistExercise/Pods-VideoPlaylistExercise.debug.xcconfig"; sourceTree = "<group>"; };
+		9DD8C73C80E30DDFD449C533 /* Pods_VideoPlaylistExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlaylistExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,15 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2359C7D4268EE4CA000F5A2E /* RxRelay in Frameworks */,
-				2359C7D6268EE4CA000F5A2E /* RxCocoa in Frameworks */,
-				2359C7B5268EDDEF000F5A2E /* SwiftyJSON in Frameworks */,
-				23DA42C82692F4B400EDCD40 /* RealmSwift in Frameworks */,
-				2359C7DB268EECB7000F5A2E /* Kingfisher in Frameworks */,
-				2359C7D8268EE4CA000F5A2E /* RxBlocking in Frameworks */,
-				2359C7D0268EE4CA000F5A2E /* RxSwift in Frameworks */,
-				23DA42C62692F4B400EDCD40 /* Realm in Frameworks */,
-				2359C7B2268EDDB0000F5A2E /* Alamofire in Frameworks */,
+				E6A6D9525D6DF6969513732F /* Pods_VideoPlaylistExercise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +59,8 @@
 			children = (
 				2359C7A0268ECDC4000F5A2E /* VideoPlaylistExercise */,
 				2359C79F268ECDC4000F5A2E /* Products */,
+				C247DF298389C6631B6FFC8E /* Pods */,
+				355734A2403E9B9F1EF3D238 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,6 +196,23 @@
 			path = local;
 			sourceTree = "<group>";
 		};
+		355734A2403E9B9F1EF3D238 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DD8C73C80E30DDFD449C533 /* Pods_VideoPlaylistExercise.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C247DF298389C6631B6FFC8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A0970BBB132F7157CEAD778 /* Pods-VideoPlaylistExercise.debug.xcconfig */,
+				15E7962DABBE6EDA100464F8 /* Pods-VideoPlaylistExercise.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,26 +220,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2359C7AD268ECDC6000F5A2E /* Build configuration list for PBXNativeTarget "VideoPlaylistExercise" */;
 			buildPhases = (
+				E794E2E450FC3B9DF656DD60 /* [CP] Check Pods Manifest.lock */,
 				2359C79A268ECDC4000F5A2E /* Sources */,
 				2359C79B268ECDC4000F5A2E /* Frameworks */,
 				2359C79C268ECDC4000F5A2E /* Resources */,
+				7A808C357F9B875FF251DEA0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = VideoPlaylistExercise;
-			packageProductDependencies = (
-				2359C7B1268EDDB0000F5A2E /* Alamofire */,
-				2359C7B4268EDDEF000F5A2E /* SwiftyJSON */,
-				2359C7CF268EE4CA000F5A2E /* RxSwift */,
-				2359C7D3268EE4CA000F5A2E /* RxRelay */,
-				2359C7D5268EE4CA000F5A2E /* RxCocoa */,
-				2359C7D7268EE4CA000F5A2E /* RxBlocking */,
-				2359C7DA268EECB7000F5A2E /* Kingfisher */,
-				23DA42C52692F4B400EDCD40 /* Realm */,
-				23DA42C72692F4B400EDCD40 /* RealmSwift */,
-			);
 			productName = VideoPlaylistExercise;
 			productReference = 2359C79E268ECDC4000F5A2E /* VideoPlaylistExercise.app */;
 			productType = "com.apple.product-type.application";
@@ -261,14 +258,6 @@
 				Base,
 			);
 			mainGroup = 2359C795268ECDC4000F5A2E;
-			packageReferences = (
-				2359C7B0268EDDB0000F5A2E /* XCRemoteSwiftPackageReference "Alamofire" */,
-				2359C7B3268EDDEF000F5A2E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				2359C7B6268EDE4E000F5A2E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */,
-				2359C7D9268EECB7000F5A2E /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				23DA42C42692F4B400EDCD40 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
-			);
 			productRefGroup = 2359C79F268ECDC4000F5A2E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,6 +278,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A808C357F9B875FF251DEA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoPlaylistExercise/Pods-VideoPlaylistExercise-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoPlaylistExercise/Pods-VideoPlaylistExercise-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoPlaylistExercise/Pods-VideoPlaylistExercise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E794E2E450FC3B9DF656DD60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VideoPlaylistExercise-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2359C79A268ECDC4000F5A2E /* Sources */ = {
@@ -429,6 +460,7 @@
 		};
 		2359C7AE268ECDC6000F5A2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A0970BBB132F7157CEAD778 /* Pods-VideoPlaylistExercise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -450,6 +482,7 @@
 		};
 		2359C7AF268ECDC6000F5A2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15E7962DABBE6EDA100464F8 /* Pods-VideoPlaylistExercise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,105 +524,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2359C7B0268EDDB0000F5A2E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.3;
-			};
-		};
-		2359C7B3268EDDEF000F5A2E /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		2359C7B6268EDE4E000F5A2E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.2;
-			};
-		};
-		2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.2.0;
-			};
-		};
-		2359C7D9268EECB7000F5A2E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.3.0;
-			};
-		};
-		23DA42C42692F4B400EDCD40 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.9.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2359C7B1268EDDB0000F5A2E /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2359C7B0268EDDB0000F5A2E /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		2359C7B4268EDDEF000F5A2E /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2359C7B3268EDDEF000F5A2E /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
-		2359C7CF268EE4CA000F5A2E /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		2359C7D3268EE4CA000F5A2E /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		2359C7D5268EE4CA000F5A2E /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		2359C7D7268EE4CA000F5A2E /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2359C7CE268EE4CA000F5A2E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		2359C7DA268EECB7000F5A2E /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2359C7D9268EECB7000F5A2E /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		23DA42C52692F4B400EDCD40 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 23DA42C42692F4B400EDCD40 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		23DA42C72692F4B400EDCD40 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 23DA42C42692F4B400EDCD40 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2359C796268ECDC4000F5A2E /* Project object */;
 }
