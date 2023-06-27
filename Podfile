@@ -6,10 +6,6 @@ target 'VideoPlaylistExercise' do
   use_frameworks!
 
   # Pods for VideoPlaylistExercise
-pod 'Alamofire', '~> 5.4.3'
-pod 'Kingfisher', '~> 6.3.0'
-pod 'RealmSwift'
-pod 'RxSwift', '6.2.0'
-pod 'RxCocoa', '6.2.0'
+  pod 'Kingfisher', '7.6.1'
 
 end
