@@ -24,16 +24,26 @@ class VideoHomeViewModel : ObservableObject {
 
   func refreshVideos() {
     fetchVideoUsecase.execute()
-      .receive(on: DispatchQueue.main)
-      .sink { [weak self] result in
-        switch result {
-        case .finished:
-          print("finished fetching")
-          self?.loadVideos()
-        case .failure(let error):
-          print("ErrorNya: \(error)")
+      .flatMap { [weak self] _ -> AnyPublisher<[Video], Error> in
+        guard let self = self else {
+          return Fail.init(
+            error: NSError(
+              domain: "VideoHomeViewModel", code: 0, userInfo: ["message": "nil self"])
+          )
+          .eraseToAnyPublisher()
         }
-      } receiveValue: { _ in
+        return self.getVideoUsecase.execute()
+      }
+      .receive(on: DispatchQueue.main)
+      .sink { completion in
+        switch completion {
+        case .finished:
+          print("Refresh videos finished")
+        case .failure(let error):
+          print("Error: \(error)")
+        }
+      } receiveValue: { videos in
+        self.videos = videos
       }
       .store(in: &cancellables)
   }
@@ -42,7 +52,13 @@ class VideoHomeViewModel : ObservableObject {
     self.getVideoUsecase.execute()
       .receive(on: DispatchQueue.main)
       .removeDuplicates()
-      .sink { [weak self] _ in
+      .sink { completion in
+        switch completion {
+        case .finished:
+          print("loadVideos videos finished")
+        case .failure(let error):
+          print("Error: \(error)")
+        }
       } receiveValue: { [weak self] videos in
         self?.videos = videos
       }

@@ -20,11 +20,11 @@ class VideoDaoTest: XCTestCase {
   }
 
   func testInsertAndFetchDataSuccess() {
-    let videos = Video.videoInfoMockData
+    let expectedVideos = [createVideo(), createVideo(), createVideo()]
     let exp = XCTestExpectation(description: #function)
     var actualResult: [Video] = []
 
-    let publishers = videos.map { video in
+    let publishers = expectedVideos.map { video in
       sut.insertOrReplace(video)
     }
 
@@ -43,14 +43,14 @@ class VideoDaoTest: XCTestCase {
     .store(in: &cancellables)
     wait(for: [exp], timeout: 1)
 
-    XCTAssertEqual(videos, actualResult)
+    XCTAssertEqual(expectedVideos, actualResult)
   }
 
   func testInsertAndDeleteAllSuccess() {
-    let videos = Video.videoInfoMockData
+    let expectedVideos = [createVideo(), createVideo(), createVideo()]
     let exp = XCTestExpectation(description: #function)
 
-    let publishers = videos.map { video in
+    let publishers = expectedVideos.map { video in
       sut.insertOrReplace(video)
     }
     Publishers.MergeMany(publishers)
@@ -77,15 +77,15 @@ class VideoDaoTest: XCTestCase {
   }
 
   func testFindByItemSuccess() {
-    let videos = Video.videoInfoMockData
+    let expectedVideos = [createVideo(), createVideo(), createVideo()]
     let exp = XCTestExpectation(description: #function)
 
-    let publishers = videos.map { video in
+    let publishers = expectedVideos.map { video in
       sut.insertOrReplace(video)
     }
     Publishers.MergeMany(publishers)
     .flatMap { _ -> AnyPublisher<VideoENT?, Error> in
-      return self.sut.findByItem(videos[0].id, videos[0].title)
+      return self.sut.findByItem(expectedVideos.last!.id, expectedVideos.last!.title)
     }
     .sink(
       receiveCompletion: { completion in
@@ -93,7 +93,7 @@ class VideoDaoTest: XCTestCase {
       },
       receiveValue: { value in
         XCTAssertNotNil(value)
-        XCTAssertEqual(videos.first, value?.toVideo())
+        XCTAssertEqual(expectedVideos.last, value?.toVideo())
       }
     )
     .store(in: &cancellables)

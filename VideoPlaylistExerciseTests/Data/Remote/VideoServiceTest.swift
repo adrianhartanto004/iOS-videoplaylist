@@ -2,7 +2,7 @@ import XCTest
 import Combine
 @testable import VideoPlaylistExercise
 
-class VideoServiceTest: XCTestCase {
+class VideoServiceTest: XCTestCase, TestHelper {
 
   private var mockNetworkClient: MockNetworkClient!
   private var cancellables: Set<AnyCancellable> = []
@@ -20,7 +20,9 @@ class VideoServiceTest: XCTestCase {
   }
 
   func testVideoServiceFetchDataSuccess() throws {
-    let expectedVideoListInfo = VideoListInfo.videoListInfoMockData
+    let expectedVideoListInfo = decodeJSONFile(
+      filename: "VideoListInfoResponse", type: VideoListInfo.self
+    )
     let exp = XCTestExpectation(description: #function)
     var actualResult: VideoListInfo?
 

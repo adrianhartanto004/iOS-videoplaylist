@@ -23,7 +23,7 @@ class VideoRepositoryTest: XCTestCase {
   }
 
   func testFetchVideosSuccess() throws {
-    let expectedVideoListInfo = VideoListInfo.videoListInfoMockData
+    let expectedVideoListInfo = createVideoListInfo()
     let exp = XCTestExpectation(description: #function)
     var isFetchCompleted: Bool = false
 
@@ -48,7 +48,7 @@ class VideoRepositoryTest: XCTestCase {
   }
 
   func testGetVideoSuccess() throws {
-    let expectedVideos = Video.videoInfoMockData
+    let expectedVideos = [createVideo(), createVideo(), createVideo()]
     let exp = XCTestExpectation(description: #function)
     var actualResult: [Video] = []
 
