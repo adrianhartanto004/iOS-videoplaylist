@@ -24,6 +24,9 @@
 		23A6CAFA2A53CCD8006E43F1 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6CAF92A53CCD8006E43F1 /* CoreDataHelpers.swift */; };
 		23B9D4392A68FFD400FFB959 /* MockedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D4382A68FFD400FFB959 /* MockedResponse.swift */; };
 		23B9D43B2A68FFDE00FFB959 /* RequestMocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D43A2A68FFDE00FFB959 /* RequestMocking.swift */; };
+		23B9D43F2A6921FF00FFB959 /* VideoRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D43E2A6921FF00FFB959 /* VideoRepositoryTest.swift */; };
+		23B9D4412A69231700FFB959 /* MockVideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D4402A69231700FFB959 /* MockVideoService.swift */; };
+		23B9D4432A69232000FFB959 /* MockVideoDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D4422A69232000FFB959 /* MockVideoDao.swift */; };
 		23C2F8452A658576003F882C /* VideoPlaylistExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C2F8442A658576003F882C /* VideoPlaylistExerciseTests.swift */; };
 		23CCBD422A49FF4A00271035 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCBD2A2A49FF4A00271035 /* Constants.swift */; };
 		23CCBD432A49FF4A00271035 /* NetworkClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CCBD2D2A49FF4A00271035 /* NetworkClientManager.swift */; };
@@ -93,6 +96,9 @@
 		23A6CAF92A53CCD8006E43F1 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		23B9D4382A68FFD400FFB959 /* MockedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedResponse.swift; sourceTree = "<group>"; };
 		23B9D43A2A68FFDE00FFB959 /* RequestMocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMocking.swift; sourceTree = "<group>"; };
+		23B9D43E2A6921FF00FFB959 /* VideoRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRepositoryTest.swift; sourceTree = "<group>"; };
+		23B9D4402A69231700FFB959 /* MockVideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVideoService.swift; sourceTree = "<group>"; };
+		23B9D4422A69232000FFB959 /* MockVideoDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVideoDao.swift; sourceTree = "<group>"; };
 		23C2F8422A658576003F882C /* VideoPlaylistExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoPlaylistExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C2F8442A658576003F882C /* VideoPlaylistExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaylistExerciseTests.swift; sourceTree = "<group>"; };
 		23CCBD2A2A49FF4A00271035 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -253,6 +259,7 @@
 		23881C6E2A66AB9900098D44 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				23B9D43E2A6921FF00FFB959 /* VideoRepositoryTest.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -477,6 +484,8 @@
 				23CD66732A66E7D800EAF85F /* MockNetworkClient.swift */,
 				23B9D4382A68FFD400FFB959 /* MockedResponse.swift */,
 				23B9D43A2A68FFDE00FFB959 /* RequestMocking.swift */,
+				23B9D4402A69231700FFB959 /* MockVideoService.swift */,
+				23B9D4422A69232000FFB959 /* MockVideoDao.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -700,8 +709,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B9D43F2A6921FF00FFB959 /* VideoRepositoryTest.swift in Sources */,
 				23DDA74C2A66570900940E27 /* VideoDaoTest.swift in Sources */,
 				23881C752A66E07E00098D44 /* VideoServiceTest.swift in Sources */,
+				23B9D4432A69232000FFB959 /* MockVideoDao.swift in Sources */,
 				23881C732A66AC2E00098D44 /* MockNetworkTarget.swift in Sources */,
 				23DDA74F2A6657EF00940E27 /* MockPersistenceStore.swift in Sources */,
 				23C2F8452A658576003F882C /* VideoPlaylistExerciseTests.swift in Sources */,
@@ -710,6 +721,7 @@
 				23881C712A66AC0A00098D44 /* RequestBuilderTest.swift in Sources */,
 				23B9D43B2A68FFDE00FFB959 /* RequestMocking.swift in Sources */,
 				23D3145C2A67E95700A715B6 /* TestHelper.swift in Sources */,
+				23B9D4412A69231700FFB959 /* MockVideoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
