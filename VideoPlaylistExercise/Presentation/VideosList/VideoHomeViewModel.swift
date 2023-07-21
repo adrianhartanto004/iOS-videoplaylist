@@ -2,7 +2,9 @@ import Combine
 import Foundation
 
 class VideoHomeViewModel : ObservableObject {
+  @Published var isLoading = false
   @Published var videos: [Video] = []
+  @Published var error: Error?
 
   private var cancellables = Set<AnyCancellable>()
 
@@ -23,6 +25,8 @@ class VideoHomeViewModel : ObservableObject {
   }
 
   func refreshVideos() {
+    error = nil
+    isLoading = true
     fetchVideoUsecase.execute()
       .flatMap { [weak self] _ -> AnyPublisher<[Video], Error> in
         guard let self = self else {
@@ -35,29 +39,33 @@ class VideoHomeViewModel : ObservableObject {
         return self.getVideoUsecase.execute()
       }
       .receive(on: DispatchQueue.main)
-      .sink { completion in
+      .sink { [weak self] completion in
         switch completion {
         case .finished:
-          print("Refresh videos finished")
+          self?.isLoading = false
         case .failure(let error):
           print("Error: \(error)")
+          self?.error = error
         }
-      } receiveValue: { videos in
-        self.videos = videos
+      } receiveValue: { [weak self] videos in
+        self?.videos = videos
       }
       .store(in: &cancellables)
   }
 
   func loadVideos() {
+    error = nil
+    isLoading = true
     self.getVideoUsecase.execute()
       .receive(on: DispatchQueue.main)
       .removeDuplicates()
-      .sink { completion in
+      .sink { [weak self] completion in
         switch completion {
         case .finished:
-          print("loadVideos videos finished")
+          self?.isLoading = false
         case .failure(let error):
           print("Error: \(error)")
+          self?.error = error
         }
       } receiveValue: { [weak self] videos in
         self?.videos = videos
