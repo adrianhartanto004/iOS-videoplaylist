@@ -70,7 +70,20 @@
 		<key>VideoPlaylistExercise.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2359C79D268ECDC4000F5A2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23C2F8412A658576003F882C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
