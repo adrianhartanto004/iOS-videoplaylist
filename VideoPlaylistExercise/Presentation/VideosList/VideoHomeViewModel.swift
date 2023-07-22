@@ -44,7 +44,6 @@ class VideoHomeViewModel : ObservableObject {
         case .finished:
           self?.isLoading = false
         case .failure(let error):
-          print("Error: \(error)")
           self?.error = error
         }
       } receiveValue: { [weak self] videos in
@@ -56,7 +55,7 @@ class VideoHomeViewModel : ObservableObject {
   func loadVideos() {
     error = nil
     isLoading = true
-    self.getVideoUsecase.execute()
+    getVideoUsecase.execute()
       .receive(on: DispatchQueue.main)
       .removeDuplicates()
       .sink { [weak self] completion in
@@ -64,7 +63,6 @@ class VideoHomeViewModel : ObservableObject {
         case .finished:
           self?.isLoading = false
         case .failure(let error):
-          print("Error: \(error)")
           self?.error = error
         }
       } receiveValue: { [weak self] videos in

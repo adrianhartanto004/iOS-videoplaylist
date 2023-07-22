@@ -34,9 +34,7 @@ final class VideoDaoImpl: VideoDao {
           do {
             if let existingVideoEnt = videoEnt {
               existingVideoEnt.update(video: item)
-              print("Saving now 1")
             } else {
-              print("Saving now 2")
               item.store(in: context)
             }
             if context.hasChanges == true {
@@ -64,7 +62,6 @@ final class VideoDaoImpl: VideoDao {
           let videos = managedObjects.map { videoEnt in
             videoEnt.toVideo()
           }
-          //          print("videoNya: \(videos)")
           output.append(contentsOf: videos)
           promise(.success(output))
         } catch {
@@ -86,7 +83,6 @@ final class VideoDaoImpl: VideoDao {
       guard let context = self?.persistentStore.mainContext else { return }
       context.perform {
         do {
-          print("Finding by item!")
           let managedObject = try context.fetch(request)
           output = managedObject.first
           promise(.success(output))
