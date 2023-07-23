@@ -38,23 +38,7 @@ final class VideoRepositoryImpl: VideoRepository {
           )
           .eraseToAnyPublisher()
         }
-        return self.videoDao.deleteAll()
-      }
-      .flatMap { [weak self] _ -> AnyPublisher<Void, Error> in
-        guard let self = self else {
-          return Fail.init(
-            error: NSError(
-              domain: "VideoRepository", code: 0, userInfo: ["message": "nil self"])
-          )
-          .eraseToAnyPublisher()
-        }
-        let savePublishers = videos.map {
-          self.videoDao.insertOrReplace($0)
-        }
-
-        // Combine the save publishers into a single publisher
-        return Publishers.MergeMany(savePublishers)
-          .eraseToAnyPublisher()
+        return self.videoDao.insertOrReplace(videos)
       }
       .eraseToAnyPublisher()
   }

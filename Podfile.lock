@@ -1,16 +1,20 @@
 PODS:
   - Kingfisher (7.6.1)
+  - Watchdog (5.2)
 
 DEPENDENCIES:
   - Kingfisher (= 7.6.1)
+  - Watchdog
 
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - Watchdog
 
 SPEC CHECKSUMS:
   Kingfisher: 93a3c6d0d551658a31e19f21747e1d15cb39d525
+  Watchdog: 622647e6bc5a55665e6dbae0b7831ad8d95abeab
 
-PODFILE CHECKSUM: 711c11f9977c029c1f3b0c698e9ccdadb20f095d
+PODFILE CHECKSUM: 2885aa73709a704df9e49ee5ed9b1f8b4f9124bd
 
 COCOAPODS: 1.12.1

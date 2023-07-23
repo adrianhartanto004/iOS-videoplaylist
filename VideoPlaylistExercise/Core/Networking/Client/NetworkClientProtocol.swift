@@ -6,17 +6,15 @@ typealias BaseAPIProtocol = NetworkClientProtocol
 typealias AnyPublisherResult<M> = AnyPublisher<M, Error>
 
 protocol NetworkClientProtocol: AnyObject {
-  /// Sends the given request.
-  ///
-  /// - parameter request: The request to be sent.
-  /// - parameter completion: A callback to invoke when the request completed.
-
   var session: URLSession { get }
 }
 
 extension NetworkClientProtocol {
   @available(iOS 13.0, *)
   @discardableResult
+  /// Sends the given request.
+  /// - parameter request: The request to be sent.
+  /// - parameter completion: A callback to invoke when the request completed.
   func perform<M, T>(
     with request: RequestBuilder,
     decoder: JSONDecoder,

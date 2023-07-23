@@ -7,7 +7,7 @@ struct VideoHomeView: View {
 
   var body: some View {
     VStack {
-      if viewModel.isLoading {
+      if viewModel.isLoading && viewModel.videos.isEmpty {
         ActivityIndicatorView() // TODO: Change to ShimmerView
       } else if !viewModel.videos.isEmpty {
         VideoHomeContentView(videos: viewModel.videos)

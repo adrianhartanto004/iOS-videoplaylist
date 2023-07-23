@@ -27,4 +27,12 @@ class MockPersistenceStore: PersistentStore {
   var mainContext: NSManagedObjectContext {
     return self.container.viewContext
   }
+
+  var backgroundContext: NSManagedObjectContext {
+    let context = self.container.newBackgroundContext()
+    context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+    context.undoManager = nil
+
+    return context
+  }
 }
