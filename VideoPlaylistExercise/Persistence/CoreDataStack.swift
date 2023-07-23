@@ -4,6 +4,7 @@ import Combine
 protocol PersistentStore {
   var container: NSPersistentContainer { get }
   var mainContext: NSManagedObjectContext { get }
+  var backgroundContext: NSManagedObjectContext { get }
 }
 
 class CoreDataStack: PersistentStore {
@@ -11,6 +12,14 @@ class CoreDataStack: PersistentStore {
 
   var mainContext: NSManagedObjectContext {
     return self.container.viewContext
+  }
+
+  var backgroundContext: NSManagedObjectContext {
+    let context = self.container.newBackgroundContext()
+    context.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+    context.undoManager = nil
+
+    return context
   }
 
   init(

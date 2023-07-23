@@ -69,6 +69,7 @@
 		23E65E112A48C4410045D902 /* DatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E65E102A48C4410045D902 /* DatabaseProvider.swift */; };
 		23E65E132A48C4470045D902 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E65E122A48C4470045D902 /* ServiceProvider.swift */; };
 		23F4645B2A682DA200ECB69A /* VideoListInfoResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 23D314592A67E7BA00A715B6 /* VideoListInfoResponse.json */; };
+		23FF49492A6D9E3900BAB7DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FF49482A6D9E3900BAB7DC /* Utils.swift */; };
 		E6A6D9525D6DF6969513732F /* Pods_VideoPlaylistExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD8C73C80E30DDFD449C533 /* Pods_VideoPlaylistExercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +149,7 @@
 		23E65E0E2A48C3D90045D902 /* ViewModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProvider.swift; sourceTree = "<group>"; };
 		23E65E102A48C4410045D902 /* DatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProvider.swift; sourceTree = "<group>"; };
 		23E65E122A48C4470045D902 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		23FF49482A6D9E3900BAB7DC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4A0970BBB132F7157CEAD778 /* Pods-VideoPlaylistExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlaylistExercise.debug.xcconfig"; path = "Target Support Files/Pods-VideoPlaylistExercise/Pods-VideoPlaylistExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		9DD8C73C80E30DDFD449C533 /* Pods_VideoPlaylistExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlaylistExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -209,6 +211,7 @@
 				237E9A992A45051B00773C42 /* Persistence */,
 				23CCBD142A49F92900271035 /* Presentation */,
 				237E9A842A44D3AC00773C42 /* Helpers */,
+				23FF49482A6D9E3900BAB7DC /* Utils.swift */,
 				2359C7A5268ECDC6000F5A2E /* Assets.xcassets */,
 				2359C7AA268ECDC6000F5A2E /* Info.plist */,
 				2359C7A7268ECDC6000F5A2E /* Preview Content */,
@@ -746,6 +749,7 @@
 				23CCBD4D2A49FF4A00271035 /* Configuration.swift in Sources */,
 				232B07702A5FBDD2005CB9EB /* CoreDataStack.swift in Sources */,
 				23DDC9B42A4A8C1300D4FE34 /* GetVideoUsecase.swift in Sources */,
+				23FF49492A6D9E3900BAB7DC /* Utils.swift in Sources */,
 				23CD71B12A4A1CD300132C74 /* VideoDao.swift in Sources */,
 				23CD71A62A4A1A7C00132C74 /* VideoService.swift in Sources */,
 				23CCBD422A49FF4A00271035 /* Constants.swift in Sources */,

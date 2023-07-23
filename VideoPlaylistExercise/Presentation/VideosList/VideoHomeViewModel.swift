@@ -45,6 +45,7 @@ class VideoHomeViewModel : ObservableObject {
           self?.isLoading = false
         case .failure(let error):
           self?.error = error
+          self?.isLoading = false
         }
       } receiveValue: { [weak self] videos in
         self?.videos = videos
@@ -61,9 +62,10 @@ class VideoHomeViewModel : ObservableObject {
       .sink { [weak self] completion in
         switch completion {
         case .finished:
-          self?.isLoading = false
+          break
         case .failure(let error):
           self?.error = error
+          self?.isLoading = false
         }
       } receiveValue: { [weak self] videos in
         self?.videos = videos

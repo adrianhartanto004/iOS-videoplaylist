@@ -10,9 +10,10 @@ import CoreData
 import Combine
 
 protocol VideoDao {
-  func insertOrReplace(_ item: Video) -> AnyPublisher<Void, Error>
+  func insertOrReplace(_ items: [Video]) -> AnyPublisher<Void, Error>
   func fetch() -> AnyPublisher<[Video], Error>
-  func findByItem(_ id: Int, _ title: String) -> AnyPublisher<VideoENT?, Error>
+  func findByItemTaskPublisher(_ id: Int, _ title: String) ->
+    AnyPublisher<VideoENT?, Never>
   func deleteAll() -> AnyPublisher<Void, Error>
 }
 
@@ -25,39 +26,46 @@ final class VideoDaoImpl: VideoDao {
     self.persistentStore = persistentStore
   }
 
-  func insertOrReplace(_ item: Video) -> AnyPublisher<Void, Error> {
-    return findByItem(item.id, item.title)
-      .flatMap { videoEnt -> AnyPublisher<Void, Error> in
-        return Future<Void, Error> { [weak self] promise in
-          guard let context = self?.persistentStore.mainContext else { return }
-          context.configureAsUpdateContext()
-          do {
-            if let existingVideoEnt = videoEnt {
+  func insertOrReplace(_ items: [Video]) -> AnyPublisher<Void, Error> {
+    return Future<Void, Error> { [weak self] promise in
+      guard let context = self?.persistentStore.backgroundContext else { return }
+      context.configureAsUpdateContext()
+      context.perform {
+        do {
+          printThread("insertOrReplace context.perform")
+          items.forEach { item in
+            if let existingVideoEnt = self?.findByItem(item.id, item.title, context) {
               existingVideoEnt.update(video: item)
+              print("Update items")
             } else {
               item.store(in: context)
+              print("Saving new items")
             }
-            if context.hasChanges == true {
-              try context.save()
-            }
-            promise(.success(()))
-          } catch {
-            promise(.failure(error))
           }
+          if context.hasChanges == true {
+            try context.save()
+          }
+          promise(.success(()))
+        } catch {
+          promise(.failure(error))
         }
-        .eraseToAnyPublisher()
       }
-      .eraseToAnyPublisher()
+    }
+    .receive(on: DispatchQueue.main)
+    .eraseToAnyPublisher()
   }
 
   func fetch() -> AnyPublisher<[Video], Error> {
-    assert(Thread.isMainThread)
-    return Future<[Video], Error> { [weak self] promise in
+    return Future { [weak self] promise in
       let request: NSFetchRequest<VideoENT> = VideoENT.fetchRequest()
+      request.fetchBatchSize = 10
+      let sortDescriptor = NSSortDescriptor(key: "id", ascending: true) // Assuming "id" is the property representing the video's identifier
+      request.sortDescriptors = [sortDescriptor]
       var output: [Video] = []
       guard let context = self?.persistentStore.mainContext else { return }
       context.perform {
         do {
+          printThread("fetch context.perform")
           let managedObjects = try context.fetch(request)
           let videos = managedObjects.map { videoEnt in
             videoEnt.toVideo()
@@ -72,35 +80,46 @@ final class VideoDaoImpl: VideoDao {
     .eraseToAnyPublisher()
   }
 
-  func findByItem(_ id: Int, _ title: String) -> AnyPublisher<VideoENT?, Error> {
-    return Future<VideoENT?, Error> { [weak self] promise in
-      var output: VideoENT?
-      let request: NSFetchRequest<VideoENT> = VideoENT.fetchRequest()
-      //    let idPredicate = NSPredicate(format: "id == %@", NSNumber(value: id))
-      let identifier = "\(id)-\(title)"
-      let idPredicate = NSPredicate(format: "identifier == %@", identifier)
-      request.predicate = idPredicate
+  private func findByItem(
+    _ id: Int,
+    _ title: String,
+    _ context: NSManagedObjectContext
+  ) -> VideoENT? {
+    var output: VideoENT?
+    let request: NSFetchRequest<VideoENT> = VideoENT.fetchRequest()
+    let identifier = "\(id)-\(title)"
+    let idPredicate = NSPredicate(format: "identifier == %@", identifier)
+    request.predicate = idPredicate
+    do {
+      let managedObject = try context.fetch(request)
+      printThread("findByItem context.perform")
+      output = managedObject.first
+    } catch {
+      print("findByItem error: \(error)")
+    }
+    return output
+  }
+
+  func findByItemTaskPublisher(_ id: Int, _ title: String) -> AnyPublisher<VideoENT?, Never> {
+    return Future { [weak self] promise in
       guard let context = self?.persistentStore.mainContext else { return }
       context.perform {
-        do {
-          let managedObject = try context.fetch(request)
-          output = managedObject.first
-          promise(.success(output))
-        } catch {
-          promise(.failure(error))
-        }
+        printThread("findByItemTaskPublisher context.perform")
+        let videoEnt = self?.findByItem(id, title, context)
+        promise(.success(videoEnt))
       }
     }
     .eraseToAnyPublisher()
   }
 
   func deleteAll() -> AnyPublisher<Void, Error> {
-    return Future<Void, Error> { [weak self] promise in
+    return Future { [weak self] promise in
       let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.DBName.videoENT)
       let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: request)
       batchDeleteRequest.resultType = .resultTypeCount
-      guard let context = self?.persistentStore.mainContext else { return }
+      guard let context = self?.persistentStore.backgroundContext else { return }
       context.perform {
+        printThread("deleteAll context.perform")
         do {
           try context.execute(batchDeleteRequest)
           promise(.success(()))
