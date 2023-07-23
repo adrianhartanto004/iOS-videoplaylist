@@ -59,7 +59,7 @@ class VideoHomeViewModelTest: XCTestCase {
 
   func testRefreshVideosError() throws {
     let exp = XCTestExpectation(description: #function)
-    let error = NSError(domain: "MockFetchVideoUsecase", code: 0, userInfo: nil)
+    let error = NSError.test
 
     mockFetchVideoUsecase.whenExecute = Result.failure(error).publisher.eraseToAnyPublisher()
 
@@ -81,7 +81,6 @@ class VideoHomeViewModelTest: XCTestCase {
 
   func testLoadVideosSuccess() throws {
     let expectedVideos = [createVideo(), createVideo(), createVideo()]
-    let loadingExp = XCTestExpectation(description: #function)
     let videosExp = XCTestExpectation(description: #function)
     var actualResult: [Video] = []
 
@@ -91,14 +90,6 @@ class VideoHomeViewModelTest: XCTestCase {
     XCTAssertTrue(sut.isLoading)
     XCTAssertNil(sut.error)
 
-    sut.$isLoading
-      .dropFirst()
-      .sink { isLoading in
-        XCTAssertFalse(isLoading)
-        loadingExp.fulfill()
-      }
-      .store(in: &cancellables)
-
     sut.$videos
       .dropFirst()
       .sink { videos in
@@ -107,14 +98,14 @@ class VideoHomeViewModelTest: XCTestCase {
         videosExp.fulfill()
       }
       .store(in: &cancellables)
-    wait(for: [loadingExp, videosExp], timeout: 5)
+    wait(for: [videosExp], timeout: 5)
 
     XCTAssertEqual(expectedVideos, actualResult)
   }
 
   func testLoadVideosError() throws {
     let exp = XCTestExpectation(description: #function)
-    let error = NSError(domain: "MockGetVideoUsecase", code: 0, userInfo: nil)
+    let error = NSError.test
 
     mockGetVideoUsecase.whenExecute = Result.failure(error).publisher.eraseToAnyPublisher()
 

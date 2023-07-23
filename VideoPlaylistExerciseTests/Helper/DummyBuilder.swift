@@ -12,13 +12,17 @@ func createVideoListInfo() -> VideoListInfo {
   )
 }
 
-func createVideo() -> Video {
+func createVideo(
+  id: Int = Int.random(in: 1...100),
+  title: String = randomString(2),
+  description: String = randomString(2)
+) -> Video {
   return Video(
-    id: Int.random(in: 1...100),
-    description: randomString(2),
+    id: id,
+    description: description,
     video_url: randomString(2),
     author: randomString(2),
     thumbnail_url: randomString(2),
-    title: randomString(2)
+    title: title
   )
 }

@@ -20,27 +20,28 @@ class VideoDaoTest: XCTestCase {
   }
 
   func testInsertAndFetchDataSuccess() {
-    let expectedVideos = [createVideo(), createVideo(), createVideo()]
+    let expectedVideos = [
+      createVideo(id: 1),
+      createVideo(id: 2),
+      createVideo(id: 3)
+    ]
     let exp = XCTestExpectation(description: #function)
     var actualResult: [Video] = []
 
-    let publishers = expectedVideos.map { video in
-      sut.insertOrReplace(video)
-    }
-
-    Publishers.MergeMany(publishers)
-    .flatMap { _ -> AnyPublisher<[Video], Error> in
-      return self.sut.fetch()
-    }
-    .sink(
-      receiveCompletion: { completion in
-        exp.fulfill()
-      },
-      receiveValue: { value in
-        actualResult = value
+    sut
+      .insertOrReplace(expectedVideos)
+      .flatMap { _ -> AnyPublisher<[Video], Error> in
+        return self.sut.fetch()
       }
-    )
-    .store(in: &cancellables)
+      .sink(
+        receiveCompletion: { completion in
+          exp.fulfill()
+        },
+        receiveValue: { value in
+          actualResult = value
+        }
+      )
+      .store(in: &cancellables)
     wait(for: [exp], timeout: 1)
 
     XCTAssertEqual(expectedVideos, actualResult)
@@ -50,29 +51,27 @@ class VideoDaoTest: XCTestCase {
     let expectedVideos = [createVideo(), createVideo(), createVideo()]
     let exp = XCTestExpectation(description: #function)
 
-    let publishers = expectedVideos.map { video in
-      sut.insertOrReplace(video)
-    }
-    Publishers.MergeMany(publishers)
-    .flatMap { _ -> AnyPublisher<[Video], Error> in
-      return self.sut.fetch()
-    }
-    .flatMap { videos -> AnyPublisher<Void, Error> in
-      XCTAssertFalse(videos.isEmpty)
-      return self.sut.deleteAll()
-    }
-    .flatMap { _ -> AnyPublisher<[Video], Error> in
-      return self.sut.fetch()
-    }
-    .sink(
-      receiveCompletion: { completion in
-        exp.fulfill()
-      },
-      receiveValue: { value in
-        XCTAssertTrue(value.isEmpty)
+    sut
+      .insertOrReplace(expectedVideos)
+      .flatMap { _ -> AnyPublisher<[Video], Error> in
+        return self.sut.fetch()
       }
-    )
-    .store(in: &cancellables)
+      .flatMap { videos -> AnyPublisher<Void, Error> in
+        XCTAssertFalse(videos.isEmpty)
+        return self.sut.deleteAll()
+      }
+      .flatMap { _ -> AnyPublisher<[Video], Error> in
+        return self.sut.fetch()
+      }
+      .sink(
+        receiveCompletion: { completion in
+          exp.fulfill()
+        },
+        receiveValue: { value in
+          XCTAssertTrue(value.isEmpty)
+        }
+      )
+      .store(in: &cancellables)
     wait(for: [exp], timeout: 1)
   }
 
@@ -80,23 +79,75 @@ class VideoDaoTest: XCTestCase {
     let expectedVideos = [createVideo(), createVideo(), createVideo()]
     let exp = XCTestExpectation(description: #function)
 
-    let publishers = expectedVideos.map { video in
-      sut.insertOrReplace(video)
-    }
-    Publishers.MergeMany(publishers)
-    .flatMap { _ -> AnyPublisher<VideoENT?, Error> in
-      return self.sut.findByItem(expectedVideos.last!.id, expectedVideos.last!.title)
-    }
-    .sink(
-      receiveCompletion: { completion in
-        exp.fulfill()
-      },
-      receiveValue: { value in
-        XCTAssertNotNil(value)
-        XCTAssertEqual(expectedVideos.last, value?.toVideo())
+    sut
+      .insertOrReplace(expectedVideos)
+      .flatMap { _ -> AnyPublisher<VideoENT?, Never> in
+        return self.sut.findByItemTaskPublisher(expectedVideos.last!.id, expectedVideos.last!.title)
       }
-    )
-    .store(in: &cancellables)
+      .sink(
+        receiveCompletion: { completion in
+          exp.fulfill()
+        },
+        receiveValue: { value in
+          XCTAssertNotNil(value)
+          XCTAssertEqual(expectedVideos.last, value?.toVideo())
+        }
+      )
+      .store(in: &cancellables)
+    wait(for: [exp], timeout: 1)
+  }
+
+  func testInsertDuplicateIdItemsWithDifferentTitlesShouldInsertData() {
+    let expectedVideos = [
+      createVideo(id: 1),
+      createVideo(id: 2, title: "A"),
+      createVideo(id: 2, title: "B")
+    ]
+    let exp = XCTestExpectation(description: #function)
+
+    sut
+      .insertOrReplace(expectedVideos)
+      .flatMap { _ -> AnyPublisher<[Video], Error> in
+        return self.sut.fetch()
+      }
+      .sink(
+        receiveCompletion: { completion in
+          exp.fulfill()
+        },
+        receiveValue: { value in
+          XCTAssertEqual(expectedVideos, value)
+          XCTAssertEqual(value.count, 3)
+        }
+      )
+      .store(in: &cancellables)
+    wait(for: [exp], timeout: 1)
+  }
+
+  func testInsertDuplicateIdItemsWithSameTitlesShouldUpdateDataAndNotInsertNewData() {
+    let expectedVideos = [
+      createVideo(id: 1),
+      createVideo(id: 2, title: "A", description: "old description"),
+      createVideo(id: 2, title: "A", description: "new description")
+    ]
+    let exp = XCTestExpectation(description: #function)
+
+    sut
+      .insertOrReplace(expectedVideos)
+      .flatMap { _ -> AnyPublisher<[Video], Error> in
+        return self.sut.fetch()
+      }
+      .sink(
+        receiveCompletion: { completion in
+          exp.fulfill()
+        },
+        receiveValue: { value in
+          XCTAssertEqual(expectedVideos.first, value.first)
+          XCTAssertEqual(expectedVideos[1], value[1])
+          XCTAssertEqual(value.count, 2)
+          XCTAssertEqual(value[1].description, expectedVideos[2].description)
+        }
+      )
+      .store(in: &cancellables)
     wait(for: [exp], timeout: 1)
   }
 }
