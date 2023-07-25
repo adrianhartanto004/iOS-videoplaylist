@@ -32,7 +32,8 @@ final class VideoDaoImpl: VideoDao {
       context.configureAsUpdateContext()
       context.perform {
         do {
-          printThread("insertOrReplace context.perform")
+          printThreadName("\(#function)")
+          printThread("\(#function) context.perform")
           items.forEach { item in
             if let existingVideoEnt = self?.findByItem(item.id, item.title, context) {
               existingVideoEnt.update(video: item)
@@ -65,7 +66,8 @@ final class VideoDaoImpl: VideoDao {
       guard let context = self?.persistentStore.mainContext else { return }
       context.perform {
         do {
-          printThread("fetch context.perform")
+          printThreadName("\(#function)")
+          printThread("\(#function) context.perform")
           let managedObjects = try context.fetch(request)
           let videos = managedObjects.map { videoEnt in
             videoEnt.toVideo()
@@ -92,7 +94,8 @@ final class VideoDaoImpl: VideoDao {
     request.predicate = idPredicate
     do {
       let managedObject = try context.fetch(request)
-      printThread("findByItem context.perform")
+      printThreadName("\(#function)")
+      printThread("\(#function) context.perform")
       output = managedObject.first
     } catch {
       print("findByItem error: \(error)")
@@ -104,7 +107,8 @@ final class VideoDaoImpl: VideoDao {
     return Future { [weak self] promise in
       guard let context = self?.persistentStore.mainContext else { return }
       context.perform {
-        printThread("findByItemTaskPublisher context.perform")
+        printThreadName("\(#function)")
+        printThread("\(#function) context.perform")
         let videoEnt = self?.findByItem(id, title, context)
         promise(.success(videoEnt))
       }
@@ -119,7 +123,8 @@ final class VideoDaoImpl: VideoDao {
       batchDeleteRequest.resultType = .resultTypeCount
       guard let context = self?.persistentStore.backgroundContext else { return }
       context.perform {
-        printThread("deleteAll context.perform")
+        printThreadName("\(#function)")
+        printThread("\(#function) context.perform")
         do {
           try context.execute(batchDeleteRequest)
           promise(.success(()))

@@ -14,3 +14,7 @@ func printThread(_ description: String) {
     print("Running \(description) on a background thread.")
   }
 }
+
+func printThreadName(_ description: String) {
+  print("Running \(description) on Thread: \(Thread.current)")
+}
