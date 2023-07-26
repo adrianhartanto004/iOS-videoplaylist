@@ -63,7 +63,7 @@ final class VideoDaoImpl: VideoDao {
       let sortDescriptor = NSSortDescriptor(key: "id", ascending: true) // Assuming "id" is the property representing the video's identifier
       request.sortDescriptors = [sortDescriptor]
       var output: [Video] = []
-      guard let context = self?.persistentStore.mainContext else { return }
+      guard let context = self?.persistentStore.backgroundContext else { return }
       context.perform {
         do {
           printThreadName("\(#function)")

@@ -49,6 +49,8 @@ class VideoHomeViewModel : ObservableObject {
         }
       } receiveValue: { [weak self] videos in
         self?.videos = videos
+        printThreadName("\(#function)")
+        printThread("\(#function) sink")
       }
       .store(in: &cancellables)
   }
@@ -68,6 +70,8 @@ class VideoHomeViewModel : ObservableObject {
           self?.isLoading = false
         }
       } receiveValue: { [weak self] videos in
+        printThreadName("\(#function)")
+        printThread("\(#function) sink")
         self?.videos = videos
       }
       .store(in: &self.cancellables)

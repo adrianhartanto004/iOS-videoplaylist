@@ -40,6 +40,8 @@ extension NetworkClientProtocol {
       .mapError { APIError.urlError($0) }
       .flatMap { response -> AnyPublisher<(data: Data, response: URLResponse), Error> in
         assert(!Thread.isMainThread)
+        printThreadName("\(#function)")
+        printThread("\(#function) urlSession.flatMap")
         guard let httpResponse = response.response as? HTTPURLResponse else {
           return Fail(error: APIError.invalidResponse(httpStatusCode: 0))
             .eraseToAnyPublisher()
