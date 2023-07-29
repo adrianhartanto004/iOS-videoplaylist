@@ -2,10 +2,6 @@ import Foundation
 
 struct VideoListInfo: Codable {
   var play_list : [Video]
-
-  enum CodingKeys: String, CodingKey {
-    case play_list
-  }
 }
 
 extension VideoListInfo: Equatable {

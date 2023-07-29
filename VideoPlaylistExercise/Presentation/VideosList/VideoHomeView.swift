@@ -1,14 +1,13 @@
 import SwiftUI
 
 struct VideoHomeView: View {
-
   @StateObject var viewModel: VideoHomeViewModel =
     ViewModelProvider.getInstance().provideVideoHomeViewModel()
 
   var body: some View {
     VStack {
       if viewModel.isLoading && viewModel.videos.isEmpty {
-        ActivityIndicatorView() // TODO: Change to ShimmerView
+        ActivityIndicatorView()
       } else if !viewModel.videos.isEmpty {
         VideoHomeContentView(videos: viewModel.videos)
       } else if viewModel.error != nil {
@@ -22,6 +21,8 @@ struct VideoHomeView: View {
       viewModel.loadVideos()
       viewModel.refreshVideos()
     }
+    .navigationTitle("Playlist")
+    .navigationBarTitleDisplayMode(.inline)
   }
 }
 
@@ -49,5 +50,11 @@ struct ActivityIndicatorView: UIViewRepresentable {
 
   func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicatorView>) {
     uiView.startAnimating()
+  }
+}
+
+struct VideoHomeView_Previews: PreviewProvider {
+  static var previews: some View {
+    VideoHomeView()
   }
 }

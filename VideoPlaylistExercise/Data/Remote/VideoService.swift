@@ -32,7 +32,7 @@ struct VideoRequest: NetworkTarget {
   }
 
   var path: String? {
-    return "/ayinozendy/a1f7629d8760c0d9cd4a5a4f051d111c/raw/"
+    return "/adrianhartanto004/ef1cfab2cb0ccb9258dcde7afbb8543e/raw/"
   }
 
   var methodType: HTTPMethod {

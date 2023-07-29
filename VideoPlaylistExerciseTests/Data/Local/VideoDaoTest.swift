@@ -97,32 +97,6 @@ class VideoDaoTest: XCTestCase {
     wait(for: [exp], timeout: 1)
   }
 
-  func testInsertDuplicateIdItemsWithDifferentTitlesShouldInsertData() {
-    let expectedVideos = [
-      createVideo(id: 1),
-      createVideo(id: 2, title: "A"),
-      createVideo(id: 2, title: "B")
-    ]
-    let exp = XCTestExpectation(description: #function)
-
-    sut
-      .insertOrReplace(expectedVideos)
-      .flatMap { _ -> AnyPublisher<[Video], Error> in
-        return self.sut.fetch()
-      }
-      .sink(
-        receiveCompletion: { completion in
-          exp.fulfill()
-        },
-        receiveValue: { value in
-          XCTAssertEqual(expectedVideos, value)
-          XCTAssertEqual(value.count, 3)
-        }
-      )
-      .store(in: &cancellables)
-    wait(for: [exp], timeout: 1)
-  }
-
   func testInsertDuplicateIdItemsWithSameTitlesShouldUpdateDataAndNotInsertNewData() {
     let expectedVideos = [
       createVideo(id: 1),

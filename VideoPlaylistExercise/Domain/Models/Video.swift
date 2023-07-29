@@ -8,15 +8,6 @@ struct Video: Hashable, Codable {
   var author: String
   var thumbnail_url: String
   var title: String
-
-  enum CodingKeys: String, CodingKey {
-    case id = "id"
-    case description = "description"
-    case video_url = "video_url"
-    case author = "author"
-    case thumbnail_url = "thumbnail_url"
-    case title = "title"
-  }
 }
 
 extension Video: Equatable {
@@ -27,7 +18,6 @@ extension Video: Equatable {
 
 extension VideoENT {
   func update(video: Video) -> VideoENT {
-    self.identifier = "\(video.id)-\(video.title)"
     self.id = Int32(video.id)
     self.desc = video.description
     self.videoUrl = video.video_url
@@ -54,7 +44,6 @@ extension Video {
   func store(in context: NSManagedObjectContext) -> VideoENT? {
     guard let videoEnt = VideoENT.insertNew(in: context)
       else { return nil }
-    videoEnt.identifier = "\(id)-\(title)"
     videoEnt.id = Int32(id)
     videoEnt.desc = description
     videoEnt.videoUrl = video_url

@@ -22,7 +22,7 @@ final class RequestBuilderTest: XCTestCase {
   }
 
   func testRequestBuilder_WhenPath_ShouldReturnString() {
-    XCTAssertEqual(sut.path, "/ayinozendy/a1f7629d8760c0d9cd4a5a4f051d111c/raw/")
+    XCTAssertEqual(sut.path, "/adrianhartanto004/ef1cfab2cb0ccb9258dcde7afbb8543e/raw/")
   }
 
   func testRequestBuilder_WhenMethodType_ShouldReturnType() {
@@ -38,7 +38,7 @@ final class RequestBuilderTest: XCTestCase {
   }
 
   func testRequestBuilder_WhenPathAppender_ShouldReturnString() {
-    XCTAssertEqual(sut.pathAppendedURL, URL("https://gist.githubusercontent.com/ayinozendy/a1f7629d8760c0d9cd4a5a4f051d111c/raw/"))
+    XCTAssertEqual(sut.pathAppendedURL, URL("https://gist.githubusercontent.com/adrianhartanto004/ef1cfab2cb0ccb9258dcde7afbb8543e/raw/"))
   }
 
   func testRequestBuilder_WhenBuildURL_ShouldBeURLRequest() {

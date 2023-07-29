@@ -60,7 +60,7 @@ final class VideoDaoImpl: VideoDao {
     return Future { [weak self] promise in
       let request: NSFetchRequest<VideoENT> = VideoENT.fetchRequest()
       request.fetchBatchSize = 10
-      let sortDescriptor = NSSortDescriptor(key: "id", ascending: true) // Assuming "id" is the property representing the video's identifier
+      let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
       request.sortDescriptors = [sortDescriptor]
       var output: [Video] = []
       guard let context = self?.persistentStore.backgroundContext else { return }
@@ -89,8 +89,7 @@ final class VideoDaoImpl: VideoDao {
   ) -> VideoENT? {
     var output: VideoENT?
     let request: NSFetchRequest<VideoENT> = VideoENT.fetchRequest()
-    let identifier = "\(id)-\(title)"
-    let idPredicate = NSPredicate(format: "identifier == %@", identifier)
+    let idPredicate = NSPredicate(format: "id == %@", NSNumber(value: id))
     request.predicate = idPredicate
     do {
       let managedObject = try context.fetch(request)

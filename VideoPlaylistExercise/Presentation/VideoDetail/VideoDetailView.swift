@@ -46,8 +46,8 @@ struct VideoDetailView: View {
   }
 }
 
-//struct VideoDetailView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    VideoDetailView(videoInfo: Video.videoInfoMockData)
-//  }
-//}
+struct VideoDetailView_Previews: PreviewProvider {
+  static var previews: some View {
+    VideoDetailView(videoInfo: Video.videoInfoMockData.first!)
+  }
+}
