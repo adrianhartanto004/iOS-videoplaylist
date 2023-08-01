@@ -23,16 +23,12 @@ final class VideoServiceImpl: NetworkClientManager<HttpRequest>, VideoService {
 }
 
 struct VideoRequest: NetworkTarget {
-  var baseURL: BaseURLType {
-    return .baseApi
-  }
-
   var version: VersionType {
     return .none
   }
 
   var path: String? {
-    return "/adrianhartanto004/ef1cfab2cb0ccb9258dcde7afbb8543e/raw/"
+    return EndpointUrls.VIDEO_PLAYLIST
   }
 
   var methodType: HTTPMethod {

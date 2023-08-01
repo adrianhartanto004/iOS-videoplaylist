@@ -2,14 +2,15 @@ import Foundation
 
 enum BaseURLType {
   case baseApi
-  case staging
 
   var desc: URL {
     switch self {
     case .baseApi:
+      #if DEBUG
       return URL("https://gist.githubusercontent.com")
-    case .staging:
+      #else
       return URL("https://gist.githubusercontent.com")
+      #endif
     }
   }
 }

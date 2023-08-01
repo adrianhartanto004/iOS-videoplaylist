@@ -57,6 +57,7 @@
 		23CD94A72A6AB3E3005CC07D /* MockGetVideoUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD94A62A6AB3E3005CC07D /* MockGetVideoUsecase.swift */; };
 		23D3145A2A67E7BA00A715B6 /* VideoListInfoResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 23D314592A67E7BA00A715B6 /* VideoListInfoResponse.json */; };
 		23D3145C2A67E95700A715B6 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D3145B2A67E95700A715B6 /* TestHelper.swift */; };
+		23D7742D2A782825004649D5 /* EndpointUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7742C2A782825004649D5 /* EndpointUrls.swift */; };
 		23D9F7E42A6990F0004B342E /* DummyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D9F7E32A6990F0004B342E /* DummyBuilder.swift */; };
 		23D9F7E62A6991F1004B342E /* RandomString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D9F7E52A6991F1004B342E /* RandomString.swift */; };
 		23DDA74C2A66570900940E27 /* VideoDaoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDA74B2A66570900940E27 /* VideoDaoTest.swift */; };
@@ -138,6 +139,7 @@
 		23CD94A62A6AB3E3005CC07D /* MockGetVideoUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGetVideoUsecase.swift; sourceTree = "<group>"; };
 		23D314592A67E7BA00A715B6 /* VideoListInfoResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VideoListInfoResponse.json; sourceTree = "<group>"; };
 		23D3145B2A67E95700A715B6 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		23D7742C2A782825004649D5 /* EndpointUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointUrls.swift; sourceTree = "<group>"; };
 		23D9F7E32A6990F0004B342E /* DummyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyBuilder.swift; sourceTree = "<group>"; };
 		23D9F7E52A6991F1004B342E /* RandomString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomString.swift; sourceTree = "<group>"; };
 		23DDA74B2A66570900940E27 /* VideoDaoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDaoTest.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				23CCBD2A2A49FF4A00271035 /* Constants.swift */,
+				23D7742C2A782825004649D5 /* EndpointUrls.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -780,6 +783,7 @@
 				23CD71902A4A019B00132C74 /* URLRequest + Extension.swift in Sources */,
 				2359C7A2268ECDC4000F5A2E /* VideoPlaylistExerciseApp.swift in Sources */,
 				23CD71942A4A019B00132C74 /* Int + Extension.swift in Sources */,
+				23D7742D2A782825004649D5 /* EndpointUrls.swift in Sources */,
 				23DDC9B62A4A8F4700D4FE34 /* UsecaseProvider.swift in Sources */,
 				23CCBD492A49FF4A00271035 /* NetworkClient.swift in Sources */,
 				23CCBD4B2A49FF4A00271035 /* APIError.swift in Sources */,

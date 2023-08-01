@@ -24,9 +24,7 @@ extension NetworkClientProtocol {
     let urlRequest = request.buildURLRequest()
     return publisher(request: urlRequest)
       .receive(on: scheduler)
-      .tryMap { result, _ -> Data in
-        return result
-      }
+      .map(\.data)
       .decode(type: type.self, decoder: decoder)
       .mapError { error in
         return error as? APIError ?? .general
@@ -35,27 +33,21 @@ extension NetworkClientProtocol {
   }
 
   private func publisher(request: URLRequest) ->
-    AnyPublisher<(data: Data,response: URLResponse), Error> {
+  AnyPublisher<(data: Data,response: URLResponse), Error> {
     return self.session.dataTaskPublisher(for: request)
-      .mapError { APIError.urlError($0) }
-      .flatMap { response -> AnyPublisher<(data: Data, response: URLResponse), Error> in
+      .mapError { APIError.httpCode($0.errorCode) }
+      .tryMap {
         assert(!Thread.isMainThread)
         printThreadName("\(#function)")
-        printThread("\(#function) urlSession.flatMap")
-        guard let httpResponse = response.response as? HTTPURLResponse else {
-          return Fail(error: APIError.invalidResponse(httpStatusCode: 0))
-            .eraseToAnyPublisher()
+        printThread("\(#function) urlSession.tryMap")
+        guard let httpResponse = $0.response as? HTTPURLResponse else {
+          throw APIError.unexpectedResponse
         }
-
         if !httpResponse.isResponseOK {
-          let error = NetworkClient.errorType(type: httpResponse.statusCode)
-          return Fail(error: error)
-            .eraseToAnyPublisher()
+          throw APIError.httpCode(httpResponse.statusCode)
         }
 
-        return Just(response)
-          .setFailureType(to: Error.self)
-          .eraseToAnyPublisher()
+        return $0
       }
       .eraseToAnyPublisher()
   }

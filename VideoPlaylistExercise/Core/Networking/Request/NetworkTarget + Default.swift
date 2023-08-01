@@ -2,6 +2,10 @@ import Foundation
 
 extension NetworkTarget {
 
+  var baseURL: BaseURLType {
+    return .baseApi
+  }
+  
   var bodyEncoding: BodyEncoding? {
     return nil
   }

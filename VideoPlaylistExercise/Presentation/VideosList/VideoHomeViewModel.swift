@@ -46,6 +46,7 @@ class VideoHomeViewModel : ObservableObject {
         case .failure(let error):
           self?.error = error
           self?.isLoading = false
+          print("error: \(error.localizedDescription)")
         }
       } receiveValue: { [weak self] videos in
         self?.videos = videos
