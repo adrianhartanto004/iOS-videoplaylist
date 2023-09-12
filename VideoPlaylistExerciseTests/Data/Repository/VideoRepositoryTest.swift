@@ -22,7 +22,7 @@ class VideoRepositoryTest: XCTestCase {
     mockVideoDao = nil
   }
 
-  func testFetchVideosSuccess() throws {
+  func test_fetchVideos_success() throws {
     let expectedVideoListInfo = createVideoListInfo()
     let exp = XCTestExpectation(description: #function)
     var isFetchCompleted: Bool = false
@@ -47,7 +47,37 @@ class VideoRepositoryTest: XCTestCase {
     XCTAssertTrue(isFetchCompleted)
   }
 
-  func testGetVideoSuccess() throws {
+  func test_fetch_error() throws {
+    let exp = XCTestExpectation(description: #function)
+    var isFetchCompleted: Bool = false
+    let error = APIError.noNetwork
+
+    mockVideoService.whenFetchedResult =
+      Result.failure(error).publisher.eraseToAnyPublisher()
+
+    sut
+      .fetchVideos()
+      .sink(
+        receiveCompletion: { completion in
+          switch completion {
+          case .finished:
+            break
+          case .failure(let failure):
+            XCTAssertEqual(error.localizedDescription, failure.localizedDescription)
+          }
+          exp.fulfill()
+        },
+        receiveValue: { _ in
+          isFetchCompleted = true
+        }
+      )
+      .store(in: &cancellables)
+    wait(for: [exp], timeout: 1)
+
+    XCTAssertFalse(isFetchCompleted)
+  }
+
+  func test_getVideos_shouldReturnData() throws {
     let expectedVideos = [createVideo(), createVideo(), createVideo()]
     let exp = XCTestExpectation(description: #function)
     var actualResult: [Video] = []
@@ -68,5 +98,35 @@ class VideoRepositoryTest: XCTestCase {
     wait(for: [exp], timeout: 1)
 
     XCTAssertEqual(expectedVideos, actualResult)
+  }
+
+  func test_getVideo_error() throws {
+    let exp = XCTestExpectation(description: #function)
+    var isFetchCompleted: Bool = false
+    let error = CoreDataError.contextNotAvailable
+
+    mockVideoDao.whenFetch =
+      Result.failure(error).publisher.eraseToAnyPublisher()
+
+    sut
+      .getVideo()
+      .sink(
+        receiveCompletion: { completion in
+          switch completion {
+          case .finished:
+            break
+          case .failure(let failure):
+            XCTAssertEqual(error.localizedDescription, failure.localizedDescription)
+          }
+          exp.fulfill()
+        },
+        receiveValue: { _ in
+          isFetchCompleted = true
+        }
+      )
+      .store(in: &cancellables)
+    wait(for: [exp], timeout: 1)
+
+    XCTAssertFalse(isFetchCompleted)
   }
 }

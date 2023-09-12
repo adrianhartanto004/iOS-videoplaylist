@@ -32,4 +32,17 @@ class MockNetworkClient: NetworkClientProtocol, TestHelper {
     )
     RequestMocking.add(mock: mock)
   }
+
+  func mockError(
+    request: RequestBuilder,
+    error: Error,
+    httpCode: Int
+  ) throws {
+    let mock = try RequestMocking.MockedResponse(
+      request: request,
+      result: .failure(error),
+      httpCode: httpCode
+    )
+    RequestMocking.add(mock: mock)
+  }
 }

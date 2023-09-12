@@ -6,7 +6,7 @@ struct VideoHomeContentView: View {
 
   var body: some View {
     List {
-      ForEach(videos, id: \.self) { video in
+      ForEach(videos, id: \.id) { video in
         NavigationLink(
           destination: VideoDetailView(videoInfo: video)
         ) {

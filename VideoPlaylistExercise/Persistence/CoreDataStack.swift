@@ -76,3 +76,7 @@ extension CoreDataStack {
     }
   }
 }
+
+enum CoreDataError: Error {
+  case contextNotAvailable
+}

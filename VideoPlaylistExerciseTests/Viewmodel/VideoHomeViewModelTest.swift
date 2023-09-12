@@ -23,7 +23,7 @@ class VideoHomeViewModelTest: XCTestCase {
     mockGetVideoUsecase = nil
   }
 
-  func testRefreshVideosSuccess() throws {
+  func test_refreshVideos_shouldReturnData() throws {
     let expectedVideos = [createVideo(), createVideo(), createVideo()]
     let loadingExp = XCTestExpectation(description: #function)
     let videosExp = XCTestExpectation(description: #function)
@@ -57,7 +57,7 @@ class VideoHomeViewModelTest: XCTestCase {
     XCTAssertEqual(expectedVideos, actualResult)
   }
 
-  func testRefreshVideosError() throws {
+  func test_refreshVideos_error() throws {
     let exp = XCTestExpectation(description: #function)
     let error = NSError.test
 
@@ -79,7 +79,7 @@ class VideoHomeViewModelTest: XCTestCase {
     XCTAssertNotNil(sut.error)
   }
 
-  func testLoadVideosSuccess() throws {
+  func test_loadVideos_shouldReturnData() throws {
     let expectedVideos = [createVideo(), createVideo(), createVideo()]
     let videosExp = XCTestExpectation(description: #function)
     var actualResult: [Video] = []
@@ -103,7 +103,7 @@ class VideoHomeViewModelTest: XCTestCase {
     XCTAssertEqual(expectedVideos, actualResult)
   }
 
-  func testLoadVideosError() throws {
+  func test_loadVideos_error() throws {
     let exp = XCTestExpectation(description: #function)
     let error = NSError.test
 

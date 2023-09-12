@@ -60,7 +60,7 @@ final class RequestMocking: URLProtocol {
           self.client?.urlProtocol(self, didLoad: data)
           self.client?.urlProtocolDidFinishLoading(self)
         case let .failure(error):
-          let failure = NSError(domain: NSURLErrorDomain, code: 1,
+          let failure = NSError(domain: NSURLErrorDomain, code: mock.httpCode,
                                 userInfo: [NSUnderlyingErrorKey: error])
           self.client?.urlProtocol(self, didFailWithError: failure)
         }

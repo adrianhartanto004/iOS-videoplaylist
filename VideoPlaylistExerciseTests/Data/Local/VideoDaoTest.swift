@@ -19,7 +19,7 @@ class VideoDaoTest: XCTestCase {
     super.tearDown()
   }
 
-  func testInsertAndFetchDataSuccess() {
+  func test_insertAndFetch_shouldReturnData() {
     let expectedVideos = [
       createVideo(id: 1),
       createVideo(id: 2),
@@ -47,7 +47,7 @@ class VideoDaoTest: XCTestCase {
     XCTAssertEqual(expectedVideos, actualResult)
   }
 
-  func testInsertAndDeleteAllSuccess() {
+  func test_insertAndDeleteAll_shouldReturnEmpty() {
     let expectedVideos = [createVideo(), createVideo(), createVideo()]
     let exp = XCTestExpectation(description: #function)
 
@@ -75,7 +75,7 @@ class VideoDaoTest: XCTestCase {
     wait(for: [exp], timeout: 1)
   }
 
-  func testFindByItemSuccess() {
+  func test_findByItem_shouldReturnData() {
     let expectedVideos = [createVideo(), createVideo(), createVideo()]
     let exp = XCTestExpectation(description: #function)
 
@@ -97,7 +97,7 @@ class VideoDaoTest: XCTestCase {
     wait(for: [exp], timeout: 1)
   }
 
-  func testInsertDuplicateIdItemsWithSameTitlesShouldUpdateDataAndNotInsertNewData() {
+  func test_insertDuplicateIdItemsWithSameTitles_shouldUpdateDataAndNotInsertNewData() {
     let expectedVideos = [
       createVideo(id: 1),
       createVideo(id: 2, title: "A", description: "old description"),
@@ -116,9 +116,8 @@ class VideoDaoTest: XCTestCase {
         },
         receiveValue: { value in
           XCTAssertEqual(expectedVideos.first, value.first)
-          XCTAssertEqual(expectedVideos[1], value[1])
+          XCTAssertEqual(expectedVideos[2], value[1])
           XCTAssertEqual(value.count, 2)
-          XCTAssertEqual(value[1].description, expectedVideos[2].description)
         }
       )
       .store(in: &cancellables)

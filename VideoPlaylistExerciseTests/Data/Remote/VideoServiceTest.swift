@@ -19,7 +19,7 @@ class VideoServiceTest: XCTestCase, TestHelper {
     RequestMocking.removeAllMocks()
   }
 
-  func testVideoServiceFetchDataSuccess() throws {
+  func test_fetchData_shouldReturnData() throws {
     let expectedVideoListInfo = decodeJSONFile(
       filename: "VideoListInfoResponse", type: VideoListInfo.self
     )
@@ -46,5 +46,37 @@ class VideoServiceTest: XCTestCase, TestHelper {
     wait(for: [exp], timeout: 1)
 
     XCTAssertEqual(expectedVideoListInfo, actualResult)
+  }
+
+  func test_fetchData_networkError() throws {
+    let exp = XCTestExpectation(description: #function)
+    let expectedError = APIError.noNetwork
+
+    try mockNetworkClient.mockError(
+      request: HttpRequest(request: VideoRequest()),
+      error: expectedError,
+      httpCode: -1009
+    )
+
+    sut
+      .fetch()
+      .sink(
+        receiveCompletion: { completion in
+          exp.fulfill()
+          switch completion {
+          case .finished:
+            break
+          case .failure(let error):
+            XCTAssertEqual(
+              expectedError.localizedDescription,
+              error.localizedDescription
+            )
+          }
+        },
+        receiveValue: { value in
+        }
+      )
+      .store(in: &cancellables)
+    wait(for: [exp], timeout: 1)
   }
 }

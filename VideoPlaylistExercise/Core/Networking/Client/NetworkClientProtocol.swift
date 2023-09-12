@@ -5,12 +5,11 @@ typealias BaseAPIProtocol = NetworkClientProtocol
 
 typealias AnyPublisherResult<M> = AnyPublisher<M, Error>
 
-protocol NetworkClientProtocol: AnyObject {
+protocol NetworkClientProtocol {
   var session: URLSession { get }
 }
 
 extension NetworkClientProtocol {
-  @available(iOS 13.0, *)
   @discardableResult
   /// Sends the given request.
   /// - parameter request: The request to be sent.

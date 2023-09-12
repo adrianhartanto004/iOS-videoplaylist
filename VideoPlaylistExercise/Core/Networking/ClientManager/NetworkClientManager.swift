@@ -3,8 +3,6 @@ import Combine
 
 class NetworkClientManager<Target: RequestBuilder> {
 
-  typealias AnyPublisherResult<M> = AnyPublisher<M, Error>
-
   // The URLSession client is use to call request with URLSession Data Task Publisher
   private let clientURLSession: NetworkClientProtocol
 
@@ -19,7 +17,7 @@ class NetworkClientManager<Target: RequestBuilder> {
     decoder: JSONDecoder = .init(),
     scheduler: T,
     responseObject type: M.Type
-  ) -> AnyPublisherResult<M> where M: Decodable, T: Scheduler {
+  ) -> AnyPublisher<M, Error> where M: Decodable, T: Scheduler {
     return clientURLSession.perform(
       with: request,
       decoder: decoder,

@@ -8,16 +8,16 @@
 import Foundation
 import Combine
 
-protocol VideoService: AnyObject {
-  func fetch() -> AnyPublisher<VideoListInfo?, Error>
+protocol VideoService {
+  func fetch() -> AnyPublisher<VideoListInfo, Error>
 }
 
 final class VideoServiceImpl: NetworkClientManager<HttpRequest>, VideoService {
-  func fetch() -> AnyPublisher<VideoListInfo?, Error> {
+  func fetch() -> AnyPublisher<VideoListInfo, Error> {
     self.request(
       request: HttpRequest(request: VideoRequest()),
       scheduler: DispatchQueue.main,
-      responseObject: VideoListInfo?.self
+      responseObject: VideoListInfo.self
     )
   }
 }

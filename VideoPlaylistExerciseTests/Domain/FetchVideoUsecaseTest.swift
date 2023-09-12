@@ -18,7 +18,7 @@ class FetchVideoUsecaseTest: XCTestCase {
     mockVideoRepository = nil
   }
 
-  func testExecuteSuccess() throws {
+  func test_execute_shouldReturnCompleted() throws {
     let exp = XCTestExpectation(description: #function)
     var isExecuteCompleted: Bool = false
 
@@ -38,5 +38,34 @@ class FetchVideoUsecaseTest: XCTestCase {
     wait(for: [exp], timeout: 1)
 
     XCTAssertTrue(isExecuteCompleted)
+  }
+
+  func test_execute_error() throws {
+    let exp = XCTestExpectation(description: #function)
+    var isExecuteCompleted: Bool = false
+    let error = APIError.noNetwork
+
+    mockVideoRepository.whenFetchVideos = Result.failure(error).publisher.eraseToAnyPublisher()
+
+    sut
+      .execute()
+      .sink(
+        receiveCompletion: { completion in
+          switch completion {
+          case .finished:
+            break
+          case .failure(let failure):
+            XCTAssertEqual(error.localizedDescription, failure.localizedDescription)
+          }
+          exp.fulfill()
+        },
+        receiveValue: { _ in
+          isExecuteCompleted = true
+        }
+      )
+      .store(in: &cancellables)
+    wait(for: [exp], timeout: 1)
+
+    XCTAssertFalse(isExecuteCompleted)
   }
 }

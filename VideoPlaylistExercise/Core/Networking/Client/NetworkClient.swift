@@ -9,8 +9,7 @@ final class NetworkClient: NetworkClientProtocol {
   ///     Default: `URLSession(configuration: .shared)`.
   ///
   let session: URLSession
-  var subscriber = Set<AnyCancellable>()
-  
+
   init(
     session: URLSession = .shared
   ) {

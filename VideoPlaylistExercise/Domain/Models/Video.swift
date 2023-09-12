@@ -1,7 +1,7 @@
 import Foundation
 import CoreData
 
-struct Video: Hashable, Codable {
+struct Video: Codable {
   var id: Int
   var description: String
   var video_url: String
@@ -13,10 +13,16 @@ struct Video: Hashable, Codable {
 extension Video: Equatable {
   static func == (lhs: Video, rhs: Video) -> Bool {
     return lhs.id == rhs.id
+      && lhs.description == rhs.description
+      && lhs.video_url == rhs.video_url
+      && lhs.author == rhs.author
+      && lhs.thumbnail_url == rhs.thumbnail_url
+      && lhs.title == rhs.title
   }
 }
 
 extension VideoENT {
+  @discardableResult
   func update(video: Video) -> VideoENT {
     self.id = Int32(video.id)
     self.desc = video.description

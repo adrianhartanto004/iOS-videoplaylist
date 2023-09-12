@@ -18,7 +18,7 @@ class GetVideoUsecaseTest: XCTestCase {
     mockVideoRepository = nil
   }
 
-  func testExecuteSuccess() throws {
+  func test_execute_shouldReturnData() throws {
     let exp = XCTestExpectation(description: #function)
     let expectedVideos = [createVideo(), createVideo(), createVideo()]
     var actualResult: [Video] = []
@@ -39,5 +39,35 @@ class GetVideoUsecaseTest: XCTestCase {
     wait(for: [exp], timeout: 1)
 
     XCTAssertEqual(expectedVideos, actualResult)
+  }
+
+  func test_execute_error() throws {
+    let exp = XCTestExpectation(description: #function)
+    var isExecuteCompleted: Bool = false
+    let error = CoreDataError.contextNotAvailable
+
+    mockVideoRepository.whenGetVideo =
+      Result.failure(error).publisher.eraseToAnyPublisher()
+
+    sut
+      .execute()
+      .sink(
+        receiveCompletion: { completion in
+          switch completion {
+          case .finished:
+            break
+          case .failure(let failure):
+            XCTAssertEqual(error.localizedDescription, failure.localizedDescription)
+          }
+          exp.fulfill()
+        },
+        receiveValue: { _ in
+          isExecuteCompleted = true
+        }
+      )
+      .store(in: &cancellables)
+    wait(for: [exp], timeout: 1)
+
+    XCTAssertFalse(isExecuteCompleted)
   }
 }

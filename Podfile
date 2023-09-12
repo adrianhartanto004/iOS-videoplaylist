@@ -7,8 +7,6 @@ target 'VideoPlaylistExercise' do
 
   # Pods for VideoPlaylistExercise
   pod 'Kingfisher', '7.6.1'
-  pod 'Watchdog'
-
 end
 
 post_install do |installer|

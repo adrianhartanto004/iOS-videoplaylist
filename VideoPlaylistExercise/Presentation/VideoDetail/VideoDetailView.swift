@@ -2,12 +2,10 @@ import AVKit
 import SwiftUI
 
 struct VideoDetailView: View {
-  @Environment(\.colorScheme) private var colorScheme
-
   let videoInfo: Video
   var avPlayer: AVPlayer?
 
-  init(videoInfo: Video){
+  init(videoInfo: Video) {
     self.videoInfo = videoInfo
     guard let videoUrl = URL(string: videoInfo.video_url) else { return }
     avPlayer = AVPlayer(url: videoUrl)
@@ -20,17 +18,14 @@ struct VideoDetailView: View {
         VStack(alignment: .leading){
           Text(videoInfo.title)
             .font(.title)
-            .foregroundColor(colorScheme == .dark ? .white : .black)
-
+            .foregroundColor(Color("general_text"))
           Text(videoInfo.author)
             .font(.subheadline)
             .foregroundColor(.secondary)
-
           Divider()
-
           Text(videoInfo.description)
             .font(.title2)
-            .foregroundColor(colorScheme == .dark ? .white : .black)
+            .foregroundColor(Color("general_text"))
         }
       }
       .padding()

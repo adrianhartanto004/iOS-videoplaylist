@@ -1,5 +1,4 @@
 import SwiftUI
-import Watchdog
 
 @main
 struct VideoPlaylistExerciseApp: App {
@@ -16,13 +15,10 @@ struct VideoPlaylistExerciseApp: App {
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
-  var watchdog: Watchdog!
-  
+
   func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//      watchdog = Watchdog(threshold: 3, strictMode: true)
-
       return true
-    }
+  }
 }

@@ -47,7 +47,6 @@
 		23CD66742A66E7D800EAF85F /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD66732A66E7D800EAF85F /* MockNetworkClient.swift */; };
 		23CD71902A4A019B00132C74 /* URLRequest + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD71812A4A019B00132C74 /* URLRequest + Extension.swift */; };
 		23CD71932A4A019B00132C74 /* HTTPURLResponse + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD71842A4A019B00132C74 /* HTTPURLResponse + Extension.swift */; };
-		23CD71942A4A019B00132C74 /* Int + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD71852A4A019B00132C74 /* Int + Extension.swift */; };
 		23CD71962A4A019B00132C74 /* URL + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD71872A4A019B00132C74 /* URL + Extension.swift */; };
 		23CD719B2A4A019B00132C74 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD718C2A4A019B00132C74 /* String + Extension.swift */; };
 		23CD71A62A4A1A7C00132C74 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD71A52A4A1A7C00132C74 /* VideoService.swift */; };
@@ -129,7 +128,6 @@
 		23CD66732A66E7D800EAF85F /* MockNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
 		23CD71812A4A019B00132C74 /* URLRequest + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest + Extension.swift"; sourceTree = "<group>"; };
 		23CD71842A4A019B00132C74 /* HTTPURLResponse + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse + Extension.swift"; sourceTree = "<group>"; };
-		23CD71852A4A019B00132C74 /* Int + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int + Extension.swift"; sourceTree = "<group>"; };
 		23CD71872A4A019B00132C74 /* URL + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL + Extension.swift"; sourceTree = "<group>"; };
 		23CD718C2A4A019B00132C74 /* String + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		23CD71A52A4A1A7C00132C74 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
@@ -475,7 +473,6 @@
 			children = (
 				23CD71812A4A019B00132C74 /* URLRequest + Extension.swift */,
 				23CD71842A4A019B00132C74 /* HTTPURLResponse + Extension.swift */,
-				23CD71852A4A019B00132C74 /* Int + Extension.swift */,
 				23CD71872A4A019B00132C74 /* URL + Extension.swift */,
 				23CD718C2A4A019B00132C74 /* String + Extension.swift */,
 			);
@@ -648,8 +645,9 @@
 		2359C796268ECDC4000F5A2E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					2359C79D268ECDC4000F5A2E = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -782,7 +780,6 @@
 				23E65E132A48C4470045D902 /* ServiceProvider.swift in Sources */,
 				23CD71902A4A019B00132C74 /* URLRequest + Extension.swift in Sources */,
 				2359C7A2268ECDC4000F5A2E /* VideoPlaylistExerciseApp.swift in Sources */,
-				23CD71942A4A019B00132C74 /* Int + Extension.swift in Sources */,
 				23D7742D2A782825004649D5 /* EndpointUrls.swift in Sources */,
 				23DDC9B62A4A8F4700D4FE34 /* UsecaseProvider.swift in Sources */,
 				23CCBD492A49FF4A00271035 /* NetworkClient.swift in Sources */,

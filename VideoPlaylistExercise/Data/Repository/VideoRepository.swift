@@ -30,7 +30,7 @@ final class VideoRepositoryImpl: VideoRepository {
     return videoService
       .fetch()
       .flatMap { [weak self] videoListInfo -> AnyPublisher<Void, Error> in
-        videos = videoListInfo?.play_list ?? []
+        videos = videoListInfo.play_list
         guard let self = self else {
           return Fail.init(
             error: NSError(
