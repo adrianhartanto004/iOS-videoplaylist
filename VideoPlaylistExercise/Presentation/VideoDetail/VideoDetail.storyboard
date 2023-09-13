@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22129"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video Detail Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="VideoDetailController" id="Y6W-OH-hqX" customClass="VideoDetailController" customModule="VideoPlaylistExercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXc-Y8-Ake">
+                                <rect key="frame" x="0.0" y="59" width="393" height="300"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="O8n-Vy-Mtp"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzr-QH-Cl6">
+                                <rect key="frame" x="16" y="375" width="361" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Author" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlx-x0-6U6">
+                                <rect key="frame" x="16" y="411.33333333333331" width="361" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbj-Gw-drJ">
+                                <rect key="frame" x="16" y="447.66666666666669" width="361" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pzr-QH-Cl6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="DG6-wp-w2c"/>
+                            <constraint firstItem="Zlx-x0-6U6" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="FSr-ey-nPn"/>
+                            <constraint firstItem="Nbj-Gw-drJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="GyK-54-kAh"/>
+                            <constraint firstItem="Zlx-x0-6U6" firstAttribute="top" secondItem="pzr-QH-Cl6" secondAttribute="bottom" constant="16" id="QMl-Rk-foD"/>
+                            <constraint firstItem="kXc-Y8-Ake" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="bcj-Jk-jaC"/>
+                            <constraint firstItem="kXc-Y8-Ake" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="k2h-LM-HBh"/>
+                            <constraint firstItem="pzr-QH-Cl6" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="klO-jw-XRI"/>
+                            <constraint firstItem="kXc-Y8-Ake" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="l5B-Qk-4vo"/>
+                            <constraint firstItem="Nbj-Gw-drJ" firstAttribute="top" secondItem="Zlx-x0-6U6" secondAttribute="bottom" constant="16" id="qOA-h9-Vbc"/>
+                            <constraint firstItem="pzr-QH-Cl6" firstAttribute="top" secondItem="kXc-Y8-Ake" secondAttribute="bottom" constant="16" id="rfw-Ni-c7R"/>
+                            <constraint firstItem="Nbj-Gw-drJ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="scI-fk-Bsf"/>
+                            <constraint firstItem="Zlx-x0-6U6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="t1P-cy-bG9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="videoAuthor" destination="Zlx-x0-6U6" id="daQ-co-FsR"/>
+                        <outlet property="videoDescription" destination="Nbj-Gw-drJ" id="Mng-57-TFT"/>
+                        <outlet property="videoTitle" destination="pzr-QH-Cl6" id="EYs-8l-kei"/>
+                        <outlet property="videoView" destination="kXc-Y8-Ake" id="9Ql-CU-URG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-19.083969465648853" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
