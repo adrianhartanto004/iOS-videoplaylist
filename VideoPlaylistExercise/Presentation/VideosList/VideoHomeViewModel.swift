@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-class VideoHomeViewModel : ObservableObject {
+class VideoHomeViewModel {
   @Published var isLoading = false
   @Published var videos: [Video] = []
   @Published var error: Error?
