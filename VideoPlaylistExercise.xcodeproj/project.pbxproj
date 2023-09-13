@@ -57,6 +57,7 @@
 		23D3145A2A67E7BA00A715B6 /* VideoListInfoResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 23D314592A67E7BA00A715B6 /* VideoListInfoResponse.json */; };
 		23D3145C2A67E95700A715B6 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D3145B2A67E95700A715B6 /* TestHelper.swift */; };
 		23D7742D2A782825004649D5 /* EndpointUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7742C2A782825004649D5 /* EndpointUrls.swift */; };
+		23D83ECC2AB1BA0F00F0252B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 23D83ECB2AB1BA0F00F0252B /* Kingfisher */; };
 		23D9F7E42A6990F0004B342E /* DummyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D9F7E32A6990F0004B342E /* DummyBuilder.swift */; };
 		23D9F7E62A6991F1004B342E /* RandomString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D9F7E52A6991F1004B342E /* RandomString.swift */; };
 		23DDA74C2A66570900940E27 /* VideoDaoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DDA74B2A66570900940E27 /* VideoDaoTest.swift */; };
@@ -70,7 +71,6 @@
 		23E65E132A48C4470045D902 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E65E122A48C4470045D902 /* ServiceProvider.swift */; };
 		23F4645B2A682DA200ECB69A /* VideoListInfoResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 23D314592A67E7BA00A715B6 /* VideoListInfoResponse.json */; };
 		23FF49492A6D9E3900BAB7DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FF49482A6D9E3900BAB7DC /* Utils.swift */; };
-		E6A6D9525D6DF6969513732F /* Pods_VideoPlaylistExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD8C73C80E30DDFD449C533 /* Pods_VideoPlaylistExercise.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +84,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15E7962DABBE6EDA100464F8 /* Pods-VideoPlaylistExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlaylistExercise.release.xcconfig"; path = "Target Support Files/Pods-VideoPlaylistExercise/Pods-VideoPlaylistExercise.release.xcconfig"; sourceTree = "<group>"; };
 		232B076F2A5FBDD2005CB9EB /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		234DE7782A6A7EE60073827D /* VideoHomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHomeViewModelTest.swift; sourceTree = "<group>"; };
 		2359C79E268ECDC4000F5A2E /* VideoPlaylistExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPlaylistExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,8 +149,6 @@
 		23E65E102A48C4410045D902 /* DatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProvider.swift; sourceTree = "<group>"; };
 		23E65E122A48C4470045D902 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		23FF49482A6D9E3900BAB7DC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		4A0970BBB132F7157CEAD778 /* Pods-VideoPlaylistExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlaylistExercise.debug.xcconfig"; path = "Target Support Files/Pods-VideoPlaylistExercise/Pods-VideoPlaylistExercise.debug.xcconfig"; sourceTree = "<group>"; };
-		9DD8C73C80E30DDFD449C533 /* Pods_VideoPlaylistExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlaylistExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6A6D9525D6DF6969513732F /* Pods_VideoPlaylistExercise.framework in Frameworks */,
+				23D83ECC2AB1BA0F00F0252B /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,8 +184,6 @@
 				2359C7A0268ECDC4000F5A2E /* VideoPlaylistExercise */,
 				23C2F8432A658576003F882C /* VideoPlaylistExerciseTests */,
 				2359C79F268ECDC4000F5A2E /* Products */,
-				C247DF298389C6631B6FFC8E /* Pods */,
-				355734A2403E9B9F1EF3D238 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -582,23 +577,6 @@
 			path = Dependency;
 			sourceTree = "<group>";
 		};
-		355734A2403E9B9F1EF3D238 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9DD8C73C80E30DDFD449C533 /* Pods_VideoPlaylistExercise.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C247DF298389C6631B6FFC8E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4A0970BBB132F7157CEAD778 /* Pods-VideoPlaylistExercise.debug.xcconfig */,
-				15E7962DABBE6EDA100464F8 /* Pods-VideoPlaylistExercise.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -606,17 +584,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2359C7AD268ECDC6000F5A2E /* Build configuration list for PBXNativeTarget "VideoPlaylistExercise" */;
 			buildPhases = (
-				E794E2E450FC3B9DF656DD60 /* [CP] Check Pods Manifest.lock */,
 				2359C79A268ECDC4000F5A2E /* Sources */,
 				2359C79B268ECDC4000F5A2E /* Frameworks */,
 				2359C79C268ECDC4000F5A2E /* Resources */,
-				7A808C357F9B875FF251DEA0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = VideoPlaylistExercise;
+			packageProductDependencies = (
+				23D83ECB2AB1BA0F00F0252B /* Kingfisher */,
+			);
 			productName = VideoPlaylistExercise;
 			productReference = 2359C79E268ECDC4000F5A2E /* VideoPlaylistExercise.app */;
 			productType = "com.apple.product-type.application";
@@ -667,6 +646,9 @@
 				Base,
 			);
 			mainGroup = 2359C795268ECDC4000F5A2E;
+			packageReferences = (
+				23D83ECA2AB1BA0F00F0252B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 2359C79F268ECDC4000F5A2E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -697,48 +679,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7A808C357F9B875FF251DEA0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VideoPlaylistExercise/Pods-VideoPlaylistExercise-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VideoPlaylistExercise/Pods-VideoPlaylistExercise-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoPlaylistExercise/Pods-VideoPlaylistExercise-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E794E2E450FC3B9DF656DD60 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VideoPlaylistExercise-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2359C79A268ECDC4000F5A2E /* Sources */ = {
@@ -943,7 +883,6 @@
 		};
 		2359C7AE268ECDC6000F5A2E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A0970BBB132F7157CEAD778 /* Pods-VideoPlaylistExercise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -966,7 +905,6 @@
 		};
 		2359C7AF268ECDC6000F5A2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15E7962DABBE6EDA100464F8 /* Pods-VideoPlaylistExercise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1067,6 +1005,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		23D83ECA2AB1BA0F00F0252B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		23D83ECB2AB1BA0F00F0252B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23D83ECA2AB1BA0F00F0252B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		237E9A9B2A4505D400773C42 /* db_model.xcdatamodeld */ = {
