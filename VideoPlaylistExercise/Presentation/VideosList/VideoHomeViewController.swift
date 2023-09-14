@@ -1,5 +1,5 @@
 //
-//  VideoViewController.swift
+//  VideoHomeViewController.swift
 //  VideoPlaylistExercise
 //
 //  Created by Adrian Hartanto on 12/09/23.
@@ -10,12 +10,14 @@ import UIKit
 import Kingfisher
 import Combine
 
-class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class VideoHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, Storyboarded {
 
   @IBOutlet weak var videoTableView: UITableView!
   let viewModel: VideoHomeViewModel = ViewModelProvider.getInstance().provideVideoHomeViewModel()
 
   private var cancellables = Set<AnyCancellable>()
+
+  weak var coordinator: VideoCoordinator?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -46,12 +48,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     return videoViewCell
   }
 
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-  {
-
-    let storyBoard = UIStoryboard(name: "VideoDetail", bundle: Bundle.main)
-    let videoDetailController = storyBoard.instantiateViewController(withIdentifier: "VideoDetailController") as! VideoDetailController
-    videoDetailController.video = viewModel.videos[indexPath.row]
-    self.navigationController?.pushViewController(videoDetailController, animated: true)
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    coordinator?.goToDetailScreen(viewModel.videos[indexPath.row])
   }
 }
