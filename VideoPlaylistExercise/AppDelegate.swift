@@ -2,20 +2,22 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  var coordinator: VideoCoordinator?
   var window: UIWindow?
 
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+  ) -> Bool {
     // Override point for customization after application launch.
-    window = UIWindow(frame: UIScreen.main.bounds)
+    let navigationController = UINavigationController()
+    coordinator = VideoCoordinator(navigationController: navigationController)
+    coordinator?.start()
 
-    self.window = UIWindow(frame: UIScreen.main.bounds)
-    let navigationController: UINavigationController?
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let videoViewController = storyboard.instantiateViewController(withIdentifier: "VideoViewController")
-    navigationController = UINavigationController(rootViewController: videoViewController)
-    self.window?.rootViewController = navigationController
-    self.window?.makeKeyAndVisible()
-    
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = navigationController
+    window?.makeKeyAndVisible()
+
     return true
   }
 }

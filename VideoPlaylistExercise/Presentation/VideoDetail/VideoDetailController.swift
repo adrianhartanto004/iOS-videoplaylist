@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import AVKit
 
-class VideoDetailController: UIViewController {
+class VideoDetailController: UIViewController, Storyboarded {
   @IBOutlet weak var videoView: UIView!
   @IBOutlet weak var videoTitle: UILabel!
   @IBOutlet weak var videoAuthor: UILabel!
@@ -19,6 +19,8 @@ class VideoDetailController: UIViewController {
   var player: AVPlayer?
   var playerController = AVPlayerViewController()
   
+  weak var coordinator: VideoCoordinator?
+
   override func viewDidLoad() {
     super.viewDidLoad()
     startVideo()
