@@ -24,6 +24,10 @@ class VideoHomeViewController: UIViewController, UITableViewDataSource, UITableV
     viewModel.loadVideos()
     viewModel.refreshVideos()
 
+    let mockApiClient = MockApiClient()
+    mockApiClient.executeRequest()
+    print(mockApiClient.getNumber())
+
     viewModel
       .$videos
       .receive(on: DispatchQueue.main)

@@ -32,6 +32,7 @@
 		23B9D4462A692E1800FFB959 /* FetchVideoUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D4452A692E1800FFB959 /* FetchVideoUsecaseTest.swift */; };
 		23B9D4482A692E2000FFB959 /* GetVideoUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D4472A692E2000FFB959 /* GetVideoUsecaseTest.swift */; };
 		23B9D44A2A692ED900FFB959 /* MockVideoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D4492A692ED900FFB959 /* MockVideoRepository.swift */; };
+		23BE621A2AD856AB001E7C5D /* MockApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BE62192AD856AB001E7C5D /* MockApiClient.m */; };
 		23C14AC12AB03BE700098DCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C14AC02AB03BE700098DCF /* Main.storyboard */; };
 		23C14AC32AB03FD300098DCF /* VideoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C14AC22AB03FD300098DCF /* VideoViewCell.swift */; };
 		23C14AC52AB0401100098DCF /* VideoHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C14AC42AB0401100098DCF /* VideoHomeViewController.swift */; };
@@ -115,6 +116,9 @@
 		23B9D4452A692E1800FFB959 /* FetchVideoUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVideoUsecaseTest.swift; sourceTree = "<group>"; };
 		23B9D4472A692E2000FFB959 /* GetVideoUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVideoUsecaseTest.swift; sourceTree = "<group>"; };
 		23B9D4492A692ED900FFB959 /* MockVideoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVideoRepository.swift; sourceTree = "<group>"; };
+		23BE62172AD856AA001E7C5D /* VideoPlaylistExercise-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoPlaylistExercise-Bridging-Header.h"; sourceTree = "<group>"; };
+		23BE62182AD856AB001E7C5D /* MockApiClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockApiClient.h; sourceTree = "<group>"; };
+		23BE62192AD856AB001E7C5D /* MockApiClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockApiClient.m; sourceTree = "<group>"; };
 		23C14AC02AB03BE700098DCF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		23C14AC22AB03FD300098DCF /* VideoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewCell.swift; sourceTree = "<group>"; };
 		23C14AC42AB0401100098DCF /* VideoHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHomeViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +243,9 @@
 				2359C7AA268ECDC6000F5A2E /* Info.plist */,
 				2359C7A7268ECDC6000F5A2E /* Preview Content */,
 				2359C7A1268ECDC4000F5A2E /* AppDelegate.swift */,
+				23BE62182AD856AB001E7C5D /* MockApiClient.h */,
+				23BE62192AD856AB001E7C5D /* MockApiClient.m */,
+				23BE62172AD856AA001E7C5D /* VideoPlaylistExercise-Bridging-Header.h */,
 			);
 			path = VideoPlaylistExercise;
 			sourceTree = "<group>";
@@ -661,6 +668,7 @@
 				TargetAttributes = {
 					2359C79D268ECDC4000F5A2E = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1500;
 					};
 					23C2F8412A658576003F882C = {
 						CreatedOnToolsVersion = 15.0;
@@ -755,6 +763,7 @@
 				23CCBD482A49FF4A00271035 /* NetworkTarget.swift in Sources */,
 				23E65E132A48C4470045D902 /* ServiceProvider.swift in Sources */,
 				23CD71902A4A019B00132C74 /* URLRequest + Extension.swift in Sources */,
+				23BE621A2AD856AB001E7C5D /* MockApiClient.m in Sources */,
 				2359C7A2268ECDC4000F5A2E /* AppDelegate.swift in Sources */,
 				23D7742D2A782825004649D5 /* EndpointUrls.swift in Sources */,
 				23DDC9B62A4A8F4700D4FE34 /* UsecaseProvider.swift in Sources */,
@@ -922,6 +931,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"VideoPlaylistExercise/Preview Content\"";
 				DEVELOPMENT_TEAM = ST2DXPTKN8;
@@ -934,6 +944,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.adrian.VideoPlaylistExercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VideoPlaylistExercise/VideoPlaylistExercise-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -944,6 +956,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"VideoPlaylistExercise/Preview Content\"";
 				DEVELOPMENT_TEAM = ST2DXPTKN8;
@@ -956,6 +969,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.adrian.VideoPlaylistExercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VideoPlaylistExercise/VideoPlaylistExercise-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
