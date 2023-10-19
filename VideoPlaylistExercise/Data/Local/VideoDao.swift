@@ -62,7 +62,6 @@ final class VideoDaoImpl: VideoDao {
       request.fetchBatchSize = 10
       let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
       request.sortDescriptors = [sortDescriptor]
-      var output: [Video] = []
       guard let context = self?.persistentStore.backgroundContext else { return }
       context.perform {
         do {
@@ -72,8 +71,7 @@ final class VideoDaoImpl: VideoDao {
           let videos = managedObjects.map { videoEnt in
             videoEnt.toVideo()
           }
-          output.append(contentsOf: videos)
-          promise(.success(output))
+          promise(.success(videos))
         } catch {
           promise(.failure(error))
         }
